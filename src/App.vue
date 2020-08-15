@@ -3,16 +3,16 @@
     <MenuList :showMenu="clicked" />
 
     <header class="header">
-      <img src="./assets/img/Logo.png" alt="logo" class="logo">
+      <img src="./assets/img/Logo.png" alt="logo" class="logo" />
       <hamburger :clicked="clicked"></hamburger>
     </header>
-    
+
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Hamburger from './components/Hamburger'
+import Hamburger from "./components/Hamburger";
 import MenuList from "./components/MenuList";
 
 export default {
@@ -22,8 +22,8 @@ export default {
     MenuList,
   },
   created() {
-    this.$eventBus.$on('showMenu', () => this.showMenu())
-    this.$eventBus.$on('closeMenu', () => this.closeMenu())
+    this.$eventBus.$on("showMenu", () => this.showMenu());
+    this.$eventBus.$on("closeMenu", () => this.closeMenu());
   },
   data: () => {
     return {
@@ -32,34 +32,26 @@ export default {
   },
   methods: {
     showMenu() {
-      this.clicked = !this.clicked
+      this.clicked = !this.clicked;
     },
     closeMenu() {
-      this.clicked = false
-    }
-  }
+      this.clicked = false;
+    },
+  },
 };
 </script>
 
-<style>
+<style lang="scss">
 * {
+  --main: #160716;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ::-webkit-scrollbar {
-  width: 16px;
-}
-
-::-webkit-scrollbar-track {
-  display: none;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to top right, #34495E, #41B883);
-  border-radius: 100px;
-} */
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 /* Font Face */
 @font-face {
@@ -67,15 +59,11 @@ export default {
   src: url("assets/Kendal-Type/Kendal-Type.ttf.woff") format("woff");
 }
 
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
 #app {
   font-family: "Kendal-Type", sans-serif;
   font-size: 16px;
 
-  background-color: #111111;
+  background-color: #f8f8f8;
 
   width: 100%;
   min-height: 100vh;
@@ -88,8 +76,36 @@ a {
 }
 
 h2 {
+  color: #f8f8f8;
   font-size: 48px;
   font-weight: normal;
+  text-align: center;
+}
+
+.section-title p {
+  color: darken($color: #f8f8f8, $amount: 20%);
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+// Header Styles
+.header {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+  width: 90%;
+  height: 100px;
+  
+  .logo {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(0, -50%);
+    
+    width: 100px;
+  }
 }
 
 /* Animations */
@@ -102,5 +118,17 @@ h2 {
     width: 150%;
     height: 150%;
   }
+}
+
+// Vue JS Animation
+.textShow-enter-active,
+.textShow-leave-active {
+  transition: 2s ease-out;
+}
+
+.textShow-enter,
+.textShow-leave-to {
+  opacity: 0;
+  transform: translateY(64px);
 }
 </style>
