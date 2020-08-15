@@ -2,12 +2,13 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
 
-import Home from './components/Home'
-import Adhikara from './components/Adhikara'
-import Gallery from './components/Gallery'
-import FAQ from './components/FAQ'
+import Home from './pages/Home'
+import Adhikara from './pages/Adhikara'
+import Gallery from './pages/Gallery'
+import FAQ from './pages/FAQ'
 
 Vue.config.productionTip = false
+Vue.prototype.$eventBus = new Vue()
 Vue.use(VueRouter)
 
 const routes = [
