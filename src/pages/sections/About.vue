@@ -1,8 +1,8 @@
 <template>
   <section id="aboutSection" class="section">
-      <div class="section-title">
-        <h2>Sekilas Tentang RAJA Brawijaya</h2>
-      </div>
+    <div class="section-title">
+      <h2>Sekilas Tentang RAJA Brawijaya</h2>
+    </div>
 
     <figure class="section-content" ref="observe">
         <div class="section-content-wrapper">
