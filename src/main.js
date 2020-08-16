@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import VueRellax from 'vue-rellax'
+
 import App from './App.vue'
 
 import Home from './pages/Home'
@@ -8,8 +10,11 @@ import Gallery from './pages/Gallery'
 import FAQ from './pages/FAQ'
 
 Vue.config.productionTip = false
+
 Vue.prototype.$eventBus = new Vue()
+
 Vue.use(VueRouter)
+Vue.use(VueRellax)
 
 const routes = [
   { path: '/', component: Home },

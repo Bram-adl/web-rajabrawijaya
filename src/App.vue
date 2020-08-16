@@ -1,11 +1,8 @@
 <template>
   <div id="app">
     <MenuList :showMenu="clicked" />
-
-    <header class="header">
-      <img src="./assets/img/Logo.png" alt="logo" class="logo" />
-      <hamburger :clicked="clicked"></hamburger>
-    </header>
+    <hamburger :clicked="clicked"></hamburger>
+    <img src="./assets/img/Logo.png" alt="logo" class="logo" />
 
     <router-view></router-view>
   </div>
@@ -76,10 +73,10 @@ a {
 }
 
 h2 {
-  color: #f8f8f8;
   font-size: 48px;
   font-weight: normal;
   text-align: center;
+  color: #f8f8f8;
 }
 
 .section-title p {
@@ -89,23 +86,15 @@ h2 {
   font-weight: normal;
 }
 
-// Header Styles
-.header {
+// Logo Styles
+.logo {
   position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translate(-50%, 0);
-  width: 90%;
-  height: 100px;
-  
-  .logo {
-    position: absolute;
-    top: 50%;
-    left: 0%;
-    transform: translate(0, -50%);
-    
-    width: 100px;
-  }
+  top: 10%;
+  left: 5%;
+  transform: translate(0, -50%);
+  z-index: 10;
+
+  width: 100px;
 }
 
 /* Animations */
