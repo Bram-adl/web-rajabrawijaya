@@ -1,64 +1,116 @@
 <template>
-  <div class="bg font-sans min-h-full">
-    <div class="md:my-0 -my-5 pt-1 md:pb-10 md:text-white">
-      <h1 class="md:text-3xl text-xl font-semibold md:font-semibold text-center mt-10">Adhikara Info</h1>
-      <p class="hidden md:block text-lg text-center font-light mb-10 mt-2">Berikut ini adalah untuk mahasiswa baru 2020
-      </p>
-    </div>
-    <div class="xl:max-w-5xl container mx-auto px-2">
-      <div class="md:flex block">
-        <div class="flex-1 m-2 rounded-lg mt-10 kotak-artikel">
-          <div class="h-auto">
-            <a href="#">
-              <img src="img/lk10.jpg" alt="" class="rounded-t-lg">
-            </a>
-            <a href="#" class="inline-block font-semibold text-blue-500 text-sm mx-5 my-3" style="color:#EFB64F">Publikasi RAJA Brawijaya</a>
-            <hr class="mx-5">
-            <h1 class="font-semibold text-lg mx-5 my-2">Judul berita letaknya disini nih, misal panjang pal....</h1>
-            <p class="hidden md:block text-sm mx-5 my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Tempore perferendis deserunt culpa nemo qui non, sequi quos facilis beatae fugit pariatur libero quaerat
-              in
-              minus tempora nisi ullam neque iste! </p>
-            <a href="#"
-              class="flex font-bold text-blue-500 text-sm mx-5 my-3 p-3 transition delay-100 duration-300 ease-in-out hover:bg-blue-900 hover:text-white justify-center">Baca
-              Sekarang</a>
-          </div>
-        </div>
-        <div class="flex-1 m-2 rounded-lg mt-10 kotak-artikel">
-          <div class="h-auto">
-            <a href="#">
-              <img src="img/lk10.jpg" alt="" class="rounded-t-lg">
-            </a>
-            <a href="#" class="inline-block font-semibold text-blue-500 text-sm mx-5 my-3" style="color:#EFB64F">Publikasi RAJA Brawijaya</a>
-            <hr class="mx-5">
-            <h1 class="font-semibold text-lg mx-5 my-2">Judul berita letaknya disini nih, misal panjang pal....</h1>
-            <p class="hidden md:block text-sm mx-5 my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Tempore perferendis deserunt culpa nemo qui non, sequi quos facilis beatae fugit pariatur libero quaerat
-              in
-              minus tempora nisi ullam neque iste! </p>
-            <a href="#"
-              class="flex font-bold text-blue-500 text-sm mx-5 my-3 p-3 transition delay-100 duration-300 ease-in-out hover:bg-blue-900 hover:text-white justify-center">Baca
-              Sekarang</a>
-          </div>
-        </div>
-        <div class="flex-1 m-2 rounded-lg mt-10 kotak-artikel">
-          <div class="h-auto">
-            <a href="#">
-              <img src="img/lk10.jpg" alt="" class="rounded-t-lg">
-            </a>
-            <a href="#" class="inline-block font-semibold text-blue-500 text-sm mx-5 my-3" style="color:#EFB64F">Publikasi RAJA Brawijaya</a>
-            <hr class="mx-5">
-            <h1 class="font-semibold text-lg mx-5 my-2">Judul berita letaknya disini nih, misal panjang pal....</h1>
-            <p class="hidden md:block text-sm mx-5 my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Tempore perferendis deserunt culpa nemo qui non, sequi quos facilis beatae fugit pariatur libero quaerat
-              in
-              minus tempora nisi ullam neque iste! </p>
-            <a href="#"
-              class="flex font-bold text-blue-500 text-sm mx-5 my-3 p-3 transition delay-100 duration-300 ease-in-out hover:bg-blue-900 hover:text-white justify-center">Baca
-              Sekarang</a>
-          </div>
-        </div>
+  <div class="md:bg-white min-h-full md:overflow-y-auto font-sans bg" id="adhikara">
+    <!-- Mobile -->
+    <div class=" md:my-0 -my-5 pt-1 md:pb-10 text-white relative">
+      <div class="relative z-0 -mt-20 md:hidden bg">
+        <img src="img/lk10.jpg" alt="" class="min-h-85-img md:h-auto md:w-auto w-full object-cover">
       </div>
+      <div
+        class="absolute -mt-20 bg-white h-48 w-full rounded-br-xxl rounded-bl-xxl text-black shadow-lg md:hidden"  style="background-color:#160716;color:#f8f8f2">
+        <a class="block font-medium text-blue-600 text-center mt-8 ">#tags #rajabrawijaya</a>
+        <h1 class="px-5 text-2xl font-bold text-center font-body">Judul berita letaknya disini, kalo panjang
+          bisa segini atau segini kali</h1>
+        <p class="font-light text-gray-600 text-center my-2">29 Juni 2020</p>
+      </div>
+    </div>
+    <!-- End Mobile -->
+
+    <!-- PC -->
+    <div class="md:flex hidden -mt-12 items-center min-h-60-img" style="background-color:#160716;color:#f8f8f2">
+      <div class="w-1/2">
+        <img src="img/lk10.jpg" alt="">
+      </div>
+      <div class="p-10">
+        <h1 class="text-gray-700 font-semibold">Kategori | 29 Juni 2020</h1>
+        <h1 class="text-5xl font-bold">Judul berita letaknya disini nih, misal panjang paling begini</h1>
+      </div>
+    </div>
+    <div class="md:block text-justify teks-penjelasan bg" style="color:#f8f8f2">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, delectus maxime est laborum vel reiciendis
+        rerum
+        corporis blanditiis mollitia excepturi. Laboriosam corporis perspiciatis odit nisi unde. Corrupti inventore
+        aperiam explicabo.
+        Sed officiis accusamus explicabo vel id velit provident impedit ipsam, doloribus deserunt voluptates aut qui
+        dicta
+        natus asperiores cum aliquam ducimus assumenda? Harum voluptas incidunt, optio sunt minima dolore quidem!
+        Dolorum possimus dolores laudantium, tempore corporis nam nesciunt! Voluptate laborum, a eius vitae magnam ut
+        dolorem repellendus itaque excepturi eaque numquam error quisquam iure nemo quaerat ea temporibus corporis
+        deleniti.
+        Explicabo dolorum commodi, et beatae repellendus officiis amet assumenda natus quisquam nemo tempora sapiente
+        nam
+        voluptatibus esse sequi, facilis asperiores totam optio consequatur odio rem? Error accusantium eligendi modi
+        hic.
+        Fugit, nihil iste explicabo rerum quas veniam! Quasi, doloribus accusamus? Obcaecati ad aut repudiandae eaque
+        veritatis, quis fuga minima omnis velit at accusantium voluptates nesciunt deleniti. Temporibus deserunt
+        aliquam
+        fuga!
+      </p>
+      <br>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam vitae nesciunt iure sunt voluptatibus adipisci
+        dolor neque, eum error eligendi deleniti, dicta voluptatem libero rerum inventore et, quas cum quaerat.
+        Nulla magni minus et culpa atque inventore odit, ex cumque aliquam alias, sit nostrum reprehenderit voluptatum
+        velit suscipit modi? Quae in illum sequi similique, facilis iure aspernatur voluptate recusandae asperiores?
+        Libero maiores at provident nemo, repellendus, sint hic corporis ut modi delectus dolor facere et adipisci
+        unde
+        veritatis, sunt laborum explicabo magni in nulla officia nostrum maxime! Quibusdam, quis odio?
+        Rerum ipsam nesciunt animi harum placeat debitis libero quidem, tempora minus, saepe nobis? Quia quibusdam
+        cupiditate eos. Alias, obcaecati, provident sint nesciunt ducimus, autem impedit soluta in voluptates laborum
+        ad.
+        Asperiores eos minima porro commodi voluptates in sed veritatis quae possimus quas ut officiis earum at, ipsa
+        sequi exercitationem culpa recusandae obcaecati, deleniti veniam, magni doloribus voluptas iusto? Ex, ea?
+        Non deserunt consequuntur consectetur exercitationem explicabo quae repellat magnam labore enim incidunt
+        maxime
+        repellendus amet perferendis, molestiae quod qui architecto minus, dolor voluptatum distinctio veritatis natus
+        animi, ut voluptatibus? Dolor?
+        Nihil, molestiae quam, assumenda culpa illum libero porro cumque in aperiam mollitia animi, natus alias aut
+        voluptatum non repudiandae officia iste dolor? Doloribus similique, a aliquid velit cupiditate at dolores.</p>
+      <br>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dicta aperiam fugiat, optio ipsa ipsam,
+        eveniet, veniam quibusdam eum cum iste nihil. Fuga nihil, sapiente excepturi quasi quia eligendi! Ab!
+        Error perferendis iste doloremque, distinctio dolore at delectus facilis. Optio perferendis nemo vero iusto,
+        quaerat nostrum excepturi ea. Animi, pariatur? Alias magni cupiditate dicta eaque numquam, eveniet aut
+        veritatis
+        officiis.
+        Nostrum, eius nisi aspernatur quibusdam unde libero, sequi maxime, nihil obcaecati quaerat eaque impedit
+        consequuntur placeat iusto molestiae deleniti quidem laudantium molestias delectus quam quas ea fugit nam
+        nulla?
+        Enim?
+        Itaque fugiat repudiandae, obcaecati repellat voluptatum ducimus maiores illum saepe excepturi minima eaque,
+        laboriosam rem facilis ea iste ut eveniet officia? Itaque eius libero placeat ex, fuga sit vel in.
+        Repellat vitae, fuga aut inventore blanditiis, expedita totam possimus molestias velit et nesciunt commodi
+        quae
+        explicabo. Molestiae enim temporibus, ipsum vero tempore aliquid, nemo harum omnis velit officiis ipsam
+        impedit?
+        Suscipit consequuntur facere iste nisi harum ab rem commodi alias, earum non. Aspernatur hic tempora
+        consequuntur
+        voluptatem, nihil voluptate ab totam pariatur quis, illo harum optio? Explicabo temporibus nisi sapiente.
+        Voluptatem amet quaerat at aliquam laboriosam ullam. Sapiente ad repellendus veniam accusamus libero tempora
+        ea
+        iste odio voluptate, tenetur maxime fugit quasi inventore magni! Eos vitae architecto quasi eaque assumenda!
+        Sed itaque corporis ipsam? Odit quam cupiditate tenetur delectus itaque? Architecto aliquid optio similique
+        voluptatibus dignissimos. Architecto vel impedit, id debitis esse soluta natus dolorum neque expedita,
+        reiciendis
+        eaque optio.
+        Facere hic quisquam reprehenderit? Consequuntur molestias ratione voluptates modi laborum non impedit
+        consequatur,
+        iste corrupti ea omnis. Quae possimus laudantium sapiente, ipsam magni molestiae at repudiandae, dolore rem
+        fugit
+        quo?
+        Facere temporibus harum ea beatae modi quae vero officiis nam eos, et deserunt quis corporis natus, cumque
+        iste
+        amet pariatur? Aliquam, repudiandae temporibus voluptatem sed soluta doloribus suscipit ullam reiciendis.
+        Lorem
+        ipsum dolor, sit amet consectetur adipisicing elit. Asperiores officia numquam eos tenetur qui illum magnam
+        quisquam architecto nemo modi vero ratione fugiat debitis ex maiores, rerum, quibusdam facilis incidunt?
+        Eveniet culpa aliquam ut exercitationem cupiditate, eius sit quasi, at atque esse quibusdam tempora velit
+        praesentium ducimus! Molestiae, veritatis hic recusandae facilis mollitia eum sunt culpa ad rem error
+        accusantium?
+        Minima, beatae natus tempora nulla magnam illum reiciendis ex obcaecati minus pariatur labore itaque ab
+        laborum
+        cum consequatur aut distinctio. A quibusdam dolores soluta est provident asperiores temporibus ex expedita.
+      </p>
     </div>
   </div>
 </template>
@@ -71,18 +123,21 @@
 
 <style scoped>
   /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
   .bg {
     background-color: #381238;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpath fill='%23331133' d='M486 705.8c-109.3-21.8-223.4-32.2-335.3-19.4C99.5 692.1 49 703 0 719.8V800h843.8c-115.9-33.2-230.8-68.1-347.6-92.2C492.8 707.1 489.4 706.5 486 705.8z'/%3E%3Cpath fill='%232e102f' d='M1600 0H0v719.8c49-16.8 99.5-27.8 150.7-33.5c111.9-12.7 226-2.4 335.3 19.4c3.4 0.7 6.8 1.4 10.2 2c116.8 24 231.7 59 347.6 92.2H1600V0z'/%3E%3Cpath fill='%232a0e2a' d='M478.4 581c3.2 0.8 6.4 1.7 9.5 2.5c196.2 52.5 388.7 133.5 593.5 176.6c174.2 36.6 349.5 29.2 518.6-10.2V0H0v574.9c52.3-17.6 106.5-27.7 161.1-30.9C268.4 537.4 375.7 554.2 478.4 581z'/%3E%3Cpath fill='%23250d25' d='M0 0v429.4c55.6-18.4 113.5-27.3 171.4-27.7c102.8-0.8 203.2 22.7 299.3 54.5c3 1 5.9 2 8.9 3c183.6 62 365.7 146.1 562.4 192.1c186.7 43.7 376.3 34.4 557.9-12.6V0H0z'/%3E%3Cpath fill='%23210b21' d='M181.8 259.4c98.2 6 191.9 35.2 281.3 72.1c2.8 1.1 5.5 2.3 8.3 3.4c171 71.6 342.7 158.5 531.3 207.7c198.8 51.8 403.4 40.8 597.3-14.8V0H0v283.2C59 263.6 120.6 255.7 181.8 259.4z'/%3E%3Cpath fill='%231f0a1f' d='M1600 0H0v136.3c62.3-20.9 127.7-27.5 192.2-19.2c93.6 12.1 180.5 47.7 263.3 89.6c2.6 1.3 5.1 2.6 7.7 3.9c158.4 81.1 319.7 170.9 500.3 223.2c210.5 61 430.8 49 636.6-16.6V0z'/%3E%3Cpath fill='%231d0a1d' d='M454.9 86.3C600.7 177 751.6 269.3 924.1 325c208.6 67.4 431.3 60.8 637.9-5.3c12.8-4.1 25.4-8.4 38.1-12.9V0H288.1c56 21.3 108.7 50.6 159.7 82C450.2 83.4 452.5 84.9 454.9 86.3z'/%3E%3Cpath fill='%231b091a' d='M1600 0H498c118.1 85.8 243.5 164.5 386.8 216.2c191.8 69.2 400 74.7 595 21.1c40.8-11.2 81.1-25.2 120.3-41.7V0z'/%3E%3Cpath fill='%23190818' d='M1397.5 154.8c47.2-10.6 93.6-25.3 138.6-43.8c21.7-8.9 43-18.8 63.9-29.5V0H643.4c62.9 41.7 129.7 78.2 202.1 107.4C1020.4 178.1 1214.2 196.1 1397.5 154.8z'/%3E%3Cpath fill='%23160716' d='M1315.3 72.4c75.3-12.6 148.9-37.1 216.8-72.4h-723C966.8 71 1144.7 101 1315.3 72.4z'/%3E%3C/g%3E%3C/svg%3E");
     background-attachment: fixed;
     background-size: cover;
-    min-height: 100vh;
   }
 
-  .kotak-artikel{
-    background-color:#0d030d;
-    color: #f8f8f2;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.8);
+  html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%
+  }
+
+  body {
+    margin: 0
   }
 
   main {
@@ -395,6 +450,7 @@
     height: auto
   }
 
+
   .container {
     width: 100%
   }
@@ -439,12 +495,6 @@
     background-color: rgba(203, 213, 224, var(--bg-opacity))
   }
 
-  .bg-gray-900 {
-    --bg-opacity: 1;
-    background-color: #1a202c;
-    background-color: rgba(26, 32, 44, var(--bg-opacity))
-  }
-
   .hover\:bg-gray-300:hover {
     --bg-opacity: 1;
     background-color: #e2e8f0;
@@ -457,33 +507,10 @@
     background-color: rgba(26, 32, 44, var(--bg-opacity))
   }
 
-  .hover\:bg-blue-900:hover {
-    --bg-opacity: 1;
-    background-color: #fa930c;
-  }
-
   .border-gray-200 {
     --border-opacity: 1;
     border-color: #edf2f7;
     border-color: rgba(237, 242, 247, var(--border-opacity))
-  }
-
-  .border-gray-300 {
-    --border-opacity: 1;
-    border-color: #e2e8f0;
-    border-color: rgba(226, 232, 240, var(--border-opacity))
-  }
-
-  .border-gray-500 {
-    --border-opacity: 1;
-    border-color: #a0aec0;
-    border-color: rgba(160, 174, 192, var(--border-opacity))
-  }
-
-  .hover\:border-black:hover {
-    --border-opacity: 1;
-    border-color: #000;
-    border-color: rgba(0, 0, 0, var(--border-opacity))
   }
 
   .hover\:border-white:hover {
@@ -498,11 +525,6 @@
 
   .rounded-full {
     border-radius: 50%
-  }
-
-  .rounded-t-lg {
-    border-top-left-radius: .5rem;
-    border-top-right-radius: .5rem
   }
 
   .rounded-tl-xxl {
@@ -529,10 +551,6 @@
     display: block
   }
 
-  .inline-block {
-    display: inline-block
-  }
-
   .flex {
     display: flex
   }
@@ -555,10 +573,6 @@
 
   .justify-between {
     justify-content: space-between
-  }
-
-  .flex-1 {
-    flex: 1 1 0%
   }
 
   .flex-shrink-0 {
@@ -601,18 +615,11 @@
     height: 12rem
   }
 
-  .h-auto {
-    height: auto
-  }
-
   .text-sm {
     font-size: .875rem
   }
 
-  .text-lg {
-    font-size: 1.125rem
-  }
-
+/* untuk teks */
   .text-xl {
     font-size: 1.25rem
   }
@@ -625,41 +632,14 @@
     font-size: 3rem
   }
 
-  .m-2 {
-    margin: .5rem
-  }
-
-  .m-3 {
-    margin: .75rem
-  }
-
   .my-2 {
     margin-top: .5rem;
     margin-bottom: .5rem
   }
 
-  .my-3 {
-    margin-top: .75rem;
-    margin-bottom: .75rem
-  }
-
-  .mx-5 {
-    margin-left: 1.25rem;
-    margin-right: 1.25rem
-  }
-
-  .mx-auto {
-    margin-left: auto;
-    margin-right: auto
-  }
-
   .-my-5 {
     margin-top: -1.25rem;
     margin-bottom: -1.25rem
-  }
-
-  .mt-2 {
-    margin-top: .5rem
   }
 
   .mr-2 {
@@ -682,14 +662,6 @@
     margin-top: 2rem
   }
 
-  .mt-10 {
-    margin-top: 2.5rem
-  }
-
-  .mb-10 {
-    margin-bottom: 2.5rem
-  }
-
   .-mb-2 {
     margin-bottom: -.5rem
   }
@@ -702,20 +674,16 @@
     margin-top: -5rem
   }
 
-  .-mb-20 {
-    margin-bottom: -5rem
-  }
-
   .-mt-40 {
     margin-top: -10rem
   }
 
-  .min-h-70-img {
-    min-height: 70vh
+  .min-h-85-img {
+    min-height: 85vh
   }
 
-  .min-h-40-img {
-    min-height: 40vh
+  .min-h-60-img {
+    min-height: 60vh
   }
 
   .object-cover {
@@ -735,14 +703,6 @@
     padding: .5rem
   }
 
-  .p-3 {
-    padding: .75rem
-  }
-
-  .p-5 {
-    padding: 1.25rem
-  }
-
   .p-10 {
     padding: 2.5rem
   }
@@ -750,11 +710,6 @@
   .py-2 {
     padding-top: .5rem;
     padding-bottom: .5rem
-  }
-
-  .px-2 {
-    padding-left: .5rem;
-    padding-right: .5rem
   }
 
   .px-3 {
@@ -767,11 +722,13 @@
     padding-right: 1.25rem
   }
 
+/* untuk teks */
   .py-12 {
     padding-top: 3rem;
     padding-bottom: 3rem
   }
 
+  /* untuk teks */
   .px-32 {
     padding-left: 8rem;
     padding-right: 8rem
@@ -843,11 +800,6 @@
     color: rgba(74, 85, 104, var(--text-opacity))
   }
 
-  .text-blue-500 {
-    --text-opacity: 1;
-    color: #EFB64F;
-  }
-
   .text-blue-600 {
     --text-opacity: 1;
     color: #3182ce;
@@ -858,12 +810,6 @@
     --text-opacity: 1;
     color: #2b6cb0;
     color: rgba(43, 108, 176, var(--text-opacity))
-  }
-
-  .hover\:text-black:hover {
-    --text-opacity: 1;
-    color: #000;
-    color: rgba(0, 0, 0, var(--text-opacity))
   }
 
   .hover\:text-white:hover {
@@ -904,21 +850,14 @@
     z-index: 50
   }
 
-  .transition {
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform
-  }
-
-  .ease-in-out {
-    transition-timing-function: cubic-bezier(.4, 0, .2, 1)
-  }
-
-  .duration-300 {
-    transition-duration: .3s
-  }
-
-  .delay-100 {
-    transition-delay: .1s
-  }
+  @media (min-width:100px) {
+      .teks-penjelasan{
+        font-size: 15px;
+        margin-top: 25vh;
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+    }
 
   @media (min-width:640px) {
     .sm\:container {
@@ -961,10 +900,20 @@
         max-width: 768px
       }
     }
-
+    
+    
     @media (min-width:1024px) {
       .md\:container {
         max-width: 1024px
+      }
+
+      .teks-penjelasan {
+        margin-top: 0vh;
+        font-size: 1.25rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        padding-left: 8rem;
+        padding-right: 8rem;
       }
     }
 
@@ -1008,16 +957,8 @@
       justify-content: flex-start
     }
 
-    .md\:font-semibold {
-      font-weight: 600
-    }
-
     .md\:h-auto {
       height: auto
-    }
-
-    .md\:text-3xl {
-      font-size: 1.875rem
     }
 
     .md\:my-0 {
@@ -1039,12 +980,6 @@
 
     .md\:pb-10 {
       padding-bottom: 2.5rem
-    }
-
-    .md\:text-white {
-      --text-opacity: 1;
-      color: #fff;
-      color: rgba(255, 255, 255, var(--text-opacity))
     }
 
     .md\:w-auto {
@@ -1109,10 +1044,6 @@
       .xl\:container {
         max-width: 1280px
       }
-    }
-
-    .xl\:max-w-5xl {
-      max-width: 64rem
     }
   }
 </style>

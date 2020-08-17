@@ -6,6 +6,7 @@ import App from './App.vue'
 
 import Home from './pages/Home'
 import Adhikara from './pages/Adhikara'
+import Adhikara_detail from './pages/Adhikara_detail'
 import Gallery from './pages/Gallery'
 import FAQ from './pages/FAQ'
 
@@ -19,6 +20,7 @@ Vue.use(VueRellax)
 const routes = [
   { path: '/', component: Home },
   { path: '/adhikara', component: Adhikara },
+  { path: '/adhikara/:id', component: Adhikara_detail },
   { path: '/gallery', component: Gallery },
   { path: '/faq', component: FAQ },
 ]
