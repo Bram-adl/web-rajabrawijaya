@@ -16,7 +16,7 @@
     </main>
     <about></about>
     <logo-introduction></logo-introduction>
-    <rangkaian-acara></rangkaian-acara>
+    <!-- <rangkaian-acara></rangkaian-acara> -->
     <what-to-do></what-to-do>
     <video-introduction></video-introduction>
   </div>
@@ -25,7 +25,7 @@
 <script>
 import About from './sections/About'
 import LogoIntroduction from './sections/LogoIntroduction'
-import RangkaianAcara from './sections/RangkaianAcara'
+// import RangkaianAcara from './sections/RangkaianAcara'
 import WhatToDo from './sections/WhatToDo'
 import VideoIntroduction from './sections/VideoIntroduction'
 
@@ -34,7 +34,7 @@ export default {
   components: {
     About,
     LogoIntroduction,
-    RangkaianAcara,
+    // RangkaianAcara,
     WhatToDo,
     VideoIntroduction,
   },
