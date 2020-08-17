@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 368.57 198.18">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        stroke: #ef5557;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+    </style>
+    <clipPath id="clip-path" transform="translate(185.22)">
+      <rect class="cls-1" x="1" y="1" width="181.35" height="196.18"/>
+    </clipPath>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Sec2">
+      <g>
+        <rect class="cls-2" x="186.22" y="1" width="181.35" height="196.18"/>
+        <g class="cls-3">
+          <g>
+            <rect class="cls-2" x="10.25" y="133.59" width="343.9" height="6.79"/>
+            <rect class="cls-2" x="13.91" y="140.39" width="336.59" height="19.86"/>
+            <rect class="cls-2" x="13.91" y="163.39" width="336.59" height="33.45"/>
+            <rect class="cls-2" x="13.91" y="160.25" width="336.59" height="3.14"/>
+            <polygon class="cls-2" points="360.43 133.59 323.84 105.37 220.35 103.28 220.35 133.59 360.43 133.59"/>
+            <polygon class="cls-2" points="2.93 133.59 39.52 105.37 143 103.28 143 133.59 2.93 133.59"/>
+            <line class="cls-2" x1="13.91" y1="187.6" x2="350.49" y2="187.6"/>
+            <rect class="cls-2" x="136.73" y="115.82" width="88.85" height="81.01"/>
+            <g>
+              <g>
+                <rect class="cls-2" x="149.01" y="137.78" width="3.14" height="17.25"/>
+                <rect class="cls-2" x="169.92" y="137.78" width="3.14" height="17.25"/>
+                <rect class="cls-2" x="190.83" y="137.78" width="3.14" height="17.25"/>
+                <rect class="cls-2" x="211.73" y="137.78" width="3.14" height="17.25"/>
+              </g>
+              <rect class="cls-2" x="143.26" y="135.68" width="75.26" height="4.18"/>
+              <rect class="cls-2" x="148.49" y="167.57" width="3.14" height="25.09"/>
+              <rect class="cls-2" x="169.4" y="167.57" width="3.14" height="25.09"/>
+              <rect class="cls-2" x="190.3" y="167.57" width="3.14" height="25.09"/>
+              <rect class="cls-2" x="211.21" y="167.57" width="3.14" height="25.09"/>
+              <rect class="cls-2" x="143.79" y="153.98" width="75.26" height="4.18"/>
+              <rect class="cls-2" x="143.79" y="165.48" width="75.26" height="4.18"/>
+              <line class="cls-2" x1="145.75" y1="158.16" x2="145.75" y2="165.48"/>
+              <line class="cls-2" x1="216.96" y1="158.16" x2="216.96" y2="165.48"/>
+              <g>
+                <polyline class="cls-2" points="212.97 130.98 212.97 130.98 212.97 135.69"/>
+                <polyline class="cls-2" points="148.82 130.46 148.82 130.46 148.82 135.16"/>
+              </g>
+              <rect class="cls-2" x="146.4" y="169.66" width="7.32" height="4.18"/>
+              <rect class="cls-2" x="167.31" y="169.66" width="7.32" height="4.18"/>
+              <rect class="cls-2" x="188.21" y="169.66" width="7.32" height="4.18"/>
+              <rect class="cls-2" x="209.12" y="169.66" width="7.32" height="4.18"/>
+              <polygon class="cls-2" points="198.14 121.57 163.65 121.57 146.92 130.98 214.87 130.98 198.14 121.57"/>
+            </g>
+            <line class="cls-2" x1="136.73" y1="192.65" x2="225.58" y2="192.65"/>
+            <g>
+              <rect class="cls-2" x="25.64" y="145.09" width="6.84" height="9.41"/>
+              <rect class="cls-2" x="35.05" y="145.09" width="6.84" height="9.41"/>
+            </g>
+            <g>
+              <rect class="cls-2" x="54.91" y="145.09" width="6.84" height="9.41"/>
+              <rect class="cls-2" x="64.32" y="145.09" width="6.84" height="9.41"/>
+            </g>
+            <g>
+              <rect class="cls-2" x="84.18" y="145.09" width="6.84" height="9.41"/>
+              <rect class="cls-2" x="93.59" y="145.09" width="6.84" height="9.41"/>
+            </g>
+            <g>
+              <rect class="cls-2" x="113.45" y="145.09" width="6.84" height="9.41"/>
+              <rect class="cls-2" x="122.86" y="145.09" width="6.84" height="9.41"/>
+            </g>
+            <rect class="cls-2" x="233.66" y="145.09" width="6.84" height="9.41"/>
+            <rect class="cls-2" x="243.07" y="145.09" width="6.84" height="9.41"/>
+            <rect class="cls-2" x="262.93" y="145.09" width="6.84" height="9.41"/>
+            <rect class="cls-2" x="272.34" y="145.09" width="6.84" height="9.41"/>
+            <rect class="cls-2" x="292.2" y="145.09" width="6.84" height="9.41"/>
+            <rect class="cls-2" x="301.6" y="145.09" width="6.84" height="9.41"/>
+            <rect class="cls-2" x="321.46" y="145.09" width="6.84" height="9.41"/>
+            <rect class="cls-2" x="330.87" y="145.09" width="6.84" height="9.41"/>
+            <rect class="cls-2" x="29.07" y="168.09" width="9.41" height="13.59"/>
+            <rect class="cls-2" x="58.33" y="168.09" width="9.41" height="13.59"/>
+            <rect class="cls-2" x="87.6" y="168.09" width="9.41" height="13.59"/>
+            <rect class="cls-2" x="116.87" y="168.09" width="9.41" height="13.59"/>
+            <rect class="cls-2" x="237.6" y="168.61" width="9.41" height="13.59"/>
+            <rect class="cls-2" x="266.87" y="168.61" width="9.41" height="13.59"/>
+            <rect class="cls-2" x="296.14" y="168.61" width="9.41" height="13.59"/>
+            <rect class="cls-2" x="325.41" y="168.61" width="9.41" height="13.59"/>
+            <g>
+              <polygon class="cls-2" points="181.86 80.19 119.99 116.35 242.32 116.35 181.86 80.19"/>
+              <line class="cls-2" x1="130.32" y1="110.59" x2="170.18" y2="110.59"/>
+              <line class="cls-2" x1="178.54" y1="110.6" x2="191.09" y2="110.6"/>
+              <line class="cls-2" x1="173.32" y1="110.6" x2="175.41" y2="110.6"/>
+              <line class="cls-2" x1="194.22" y1="110.6" x2="200.49" y2="110.6"/>
+              <line class="cls-2" x1="203.63" y1="110.6" x2="205.72" y2="110.6"/>
+            </g>
+            <g>
+              <polygon class="cls-2" points="181.62 78.72 140.98 99.64 221.34 99.64 181.62 78.72"/>
+              <line class="cls-2" x1="150.18" y1="94.91" x2="180.63" y2="94.91"/>
+              <line class="cls-2" x1="183.77" y1="94.92" x2="190.04" y2="94.92"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
