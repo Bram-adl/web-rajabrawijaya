@@ -9,6 +9,8 @@ import Adhikara from './pages/Adhikara.vue'
 import Gallery from './pages/Gallery.vue'
 import Faq from './pages/Faq.vue'
 
+import '@/assets/scss/responsive.scss'
+
 import 'animate.css'
 
 Vue.use(VueRouter)

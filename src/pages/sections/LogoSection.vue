@@ -115,10 +115,10 @@ export default {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          margin-left: 80px;
+          margin-left: 75px;
 
           height: 100%;
-          height: 300px;
+          height: auto;
         }
 
         .arrow {

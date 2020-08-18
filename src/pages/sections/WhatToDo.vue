@@ -5,7 +5,7 @@
       <div class="card-box">
         <div class="card" v-for="card in cards" :key="card.id">
           <h3 class="card-title">{{ card.title }}</h3>
-          <p class="card-text">{{ card.text }}</p>
+          <p class="card-text">{{ card.text | formatText() }}</p>
           <div class="card-footer" :style="'background:' + card.color">
             <a href="#">Lihat lebih</a>
           </div>
@@ -59,6 +59,13 @@ export default {
           this.Fire.$emit('resetHamburgerColor')
         }
       })
+    }
+  },
+  filters: {
+    formatText(text) {
+      if ( text.length > 80 ) {
+        return text.slice(0, 81) + '...'
+      }
     }
   }
 }

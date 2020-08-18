@@ -26,10 +26,7 @@ export default {
   img {
     position: absolute;
     bottom: -500px;
-  }
-  
-  .container {
-    height: 100%;
+    z-index: 0;
   }
 
   .video {
@@ -40,6 +37,9 @@ export default {
     border-radius: 12px;
     border: 5px solid $main-light;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.32);
+    position: relative;
+
+    z-index: 1;
   }
 }
 </style>

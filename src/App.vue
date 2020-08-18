@@ -63,17 +63,21 @@ h1, h2, h3, h4 {
 }
 img { max-width: 100%; }
 
+html, body {
+  // overflow: hidden;
+}
+
 .app {
-  min-height: 100vh;
+  width: 100%;
   font-family: 'Roboto', sans-serif;
   background: $main-color;
 }
 
 .logo {
   position: absolute;
-  z-index: 5;
+  z-index: 9;
   left: 50px;
-  top: 25px;
+  top: 30px;
   width: 75px;
   height: auto;
 }
@@ -81,6 +85,7 @@ img { max-width: 100%; }
 .container {
   max-width: 1200px;
   margin: auto;
+  padding: 0 100px;
 }
 
 .section-title {

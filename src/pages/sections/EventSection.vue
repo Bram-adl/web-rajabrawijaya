@@ -74,7 +74,7 @@ export default {
 
   .card-box {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
     margin-top: 50px;
@@ -82,9 +82,11 @@ export default {
     .card {
       width: 250px;
       height: 350px;
-      margin: 0 25px;
-      // background: transparent;
       perspective: 1000px;
+
+      &:nth-child(2) {
+        margin: 0 25px;
+      }
 
       &:hover {
         .card-inner {
@@ -192,7 +194,7 @@ export default {
           }
           &-footer {
             position: absolute;
-            max-height: 100px;
+            max-height: 50px;
             bottom: 0;
             left: 50%;
             transform: translate(-50%, 0);

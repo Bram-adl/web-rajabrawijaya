@@ -100,7 +100,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 5; /* Z-Index for Menu List: 5 */
+  z-index: 9; /* Z-Index for Menu List: 5 */
   background: linear-gradient(to top right, $main-color, lighten($main-color, 5%));
 
   .container-grid {    
