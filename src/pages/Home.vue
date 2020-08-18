@@ -1,23 +1,22 @@
 <template>
   <div class="master-container">
     <div class="home">
-      <div class="parallax-wrapper">
+      <div class="parallax-container">
         <img v-rellax="{ speed: 4 }" src="@/assets/img/gunung.png" class="parallax-img gunung">
       </div>
-      <div class="parallax-wrapper">
+      <div class="parallax-container parallax-sungai">
         <img v-rellax="{ speed: 5 }" src="@/assets/img/sungai2.png" class="parallax-img sungai">
+        <div class="about-container">
+          <h2 class="about-title">Sekilas Tentang RAJA Brawijaya</h2>
+          <p
+            class="about-text"
+          >RAJA Brawijaya merupakan singkatan dari Rangkaian Jelajah Almamater Universitas Brawijaya yang merupakan serangkaian kegiatan dalam rangka memberikan fasilitas terhadap mahasiswa baru untuk mengenal kehidupan di kampus.</p>
+        </div> 
       </div>
 
       <div class="title-container">
         <h1 class="title">RAJA BRAWIJAYA</h1>
         <h3 class="subtitle">Rangkaian Acara Jelajah Almamater Universitas Brawijaya</h3>
-      </div>
-
-      <div class="about-container">
-        <h2 class="about-title">Sekilas Tentang RAJA Brawijaya</h2>
-        <p
-          class="about-text"
-        >RAJA Brawijaya merupakan singkatan dari Rangkaian Jelajah Almamater Universitas Brawijaya yang merupakan serangkaian kegiatan dalam rangka memberikan fasilitas terhadap mahasiswa baru untuk mengenal kehidupan di kampus.</p>
       </div>
     </div>
 
@@ -52,45 +51,70 @@ export default {
 @import "@/assets/scss/_variables.scss";
 
 .home {
-  height: 150vh;
+  height: 100vh;
   position: relative;
+  background: $main-color;
 
-  .parallax-wrapper {
+  .parallax-container {
     width: 100%;
     height: 100%;
 
-    position: absolute;
-    overflow: hidden;
-
-    .parallax-img {
-      position: absolute;
-      left: 0;
-    }
-
     .gunung {
-      top: 0;
-      z-index: 3;
-    }
-    .sungai {
-      bottom: -275px;
-      z-index: 5;
+      width: 100%;
+      height: 100%;
     }
   }
 
+  .parallax-sungai {
+    width: 100%;
+    height: calc(100vh + 300px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 4;
+
+    .sungai {
+      width: 100%;
+      height: 1250px;
+      object-fit: cover;
+      object-position: bottom center;
+    }
+
+    .about-container {
+      position: absolute;
+      top: 100%;
+      left: 50px;
+      transform: translate(0, -100%);
+      z-index: 5;
+      width: 400px;
+
+      color: $main-light;
+
+      .about-title {
+        font-size: 36px;
+      }
+
+      .about-text {
+        line-height: 1.5;
+        margin-top: 16px;
+      }
+    }
+  }
+  
   .title-container {
     color: $main-light;
     position: absolute;
     left: 50%;
     top: 0;
     transform: translate(-50%, 100px);
-    z-index: 4;
+    z-index: 2;
 
     color: $main-light;
     text-align: center;
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.32);
 
     .title {
-      display: block;
+      font-family: 'Kendal-Type', sans-serif;
       font-size: 64px;
       position: relative;
 
@@ -123,26 +147,6 @@ export default {
       letter-spacing: 2px;
       opacity: .8;
       white-space: nowrap;
-    }
-  }
-
- .about-container {
-    position: absolute;
-    bottom: 25vh;
-    left: 50px;
-    transform: translateY(50%);
-    z-index: 5;
-    width: 400px;
-
-    color: $main-light;
-
-    .about-title {
-      font-size: 36px;
-    }
-
-    .about-text {
-      line-height: 1.5;
-      margin-top: 16px;
     }
   }
 }

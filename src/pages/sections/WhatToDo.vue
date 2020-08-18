@@ -1,8 +1,10 @@
 <template>
   <div class="what-to-do-section" ref="observe">
     <div class="container">
-      <h2 class="section-title">What You Have To Do</h2>
-      <div class="card-box">
+      <div class="row-title">
+       <h2 class="section-title title-dark">What You Have To Do</h2>
+      </div>
+      <div class="row-content height-auto justify-between">
         <div class="card" v-for="card in cards" :key="card.id">
           <h3 class="card-title">{{ card.title }}</h3>
           <p class="card-text">{{ card.text | formatText() }}</p>
@@ -75,50 +77,47 @@ export default {
 @import '@/assets/scss/_variables.scss';
 
 .what-to-do-section {
+  height: auto;
   background: $main-light;
+  padding-bottom: 25px;
+  
+  .card {
+    width: 300px;
+    border-radius: 8px;
+    background-color: $main-light;
+    box-shadow: 4px 16px 16px rgba(0, 0, 0, 0.16);
+    overflow: hidden;
 
-  .card-box {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 50px;
+    transition: .4s ease-out;
 
-    .card {
-      width: 300px;
-      border-radius: 8px;
-      background-color: $main-light;
-      box-shadow: 4px 16px 16px rgba(0, 0, 0, 0.16);
-      overflow: hidden;
+    &:hover {
+      transform: translateY(-8px);
+    }
 
-      transition: .4s ease-out;
+    .card-title {
+      font-family: 'Kendal-Type', sans-serif;
+      font-size: 30px;
+      padding: 16px 0 0 16px;
+    }
 
-      &:hover {
-        transform: translateY(-8px);
-      }
+    .card-text {
+      font-size: 14px;
+      line-height: 1.5;
+      color: lightslategray !important;
+      padding: 16px;
+    }
 
-      .card-title {
-        font-size: 30px;
-        padding: 16px 0 0 16px;
-      }
+    .card-footer {
+      background: rgb(177, 60, 171);
+      padding: 16px;
+      
+      a {
+        color: $main-light;
+        display: inline-block;
+        transition: .4s ease-out;
 
-      .card-text {
-        font-size: 14px;
-        line-height: 1.5;
-        color: lighten($main-dark, 25%);
-        padding: 16px;
-      }
-
-      .card-footer {
-        background: rgb(177, 60, 171);
-        padding: 16px;
-        
-        a {
-          color: $main-light;
-          display: inline-block;
-          transition: .4s ease-out;
-
-          &:hover {
-            transform: translateX(4px);
-          }
+        &:hover {
+          transform: translateX(4px);
         }
       }
     }

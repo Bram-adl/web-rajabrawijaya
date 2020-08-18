@@ -45,8 +45,8 @@ export default {
   right: 50px;
   z-index: 10;
   
-  width: 52px;
-  height: 52px;
+  width: 75px;
+  height: 75px;
 
   border: 1px solid $main-light;
   border-radius: 50%;
@@ -77,10 +77,10 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: borderDrippled 1s ease-out infinite;
+    animation: borderDrippled 1s ease-out infinite alternate;
     
     background-color: transparent;
-    border: 1px solid darken($color: $main-light, $amount: 50%);
+    border: 1px solid darken($main-light, 25%);
     border-radius: 50%;
   }
   

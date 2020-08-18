@@ -1,23 +1,26 @@
 <template>
   <section class="logo-section">
-    <div class="container grid-container">
-      <h2 class="section-title title-light">Pengenalan Logo</h2>
-      <div class="logo-box">
-        <div class="logo-wrapper">
-          <i class="fas fa-chevron-left arrow arrow-left" @click="prevLogo(current)"></i>
-          <img src="@/assets/img/Ungu.png" alt="Logo Ungu" class="logo-ungu logo-min" v-show="current == 4">
-          <img src="@/assets/img/Hijau.png" alt="Logo Hijau" class="logo-hijau logo-min" v-show="current == 3">
-          <img src="@/assets/img/Biru.png" alt="Logo Biru" class="logo-biru logo-min" v-show="current == 2">
-          <img src="@/assets/img/Kuning.png" alt="Logo Kuning" class="logo-kuning logo-min" v-show="current == 1">
-          <img src="@/assets/img/Orange.png" alt="Logo Orange" class="logo-orange logo-min" v-show="current == 0">
-          <i class="fas fa-chevron-right arrow arrow-right" @click="nextLogo(current)"></i>
-        </div>
+    <div class="container">
+      <div class="row-title">
+        <h2 class="section-title pt-3">Pengenalan Logo</h2>
       </div>
-      <div class="content-box">
-        <div class="content-wrapper">
-          <h3 class="title">{{ title }}</h3>
-          <p class="color">{{ color }}</p>
-          <p class="description">{{ description }}</p>
+      <div class="row-content flex-container">
+        <div class="filosofi">
+          <div class="filosofi__logo">
+            <i class="fas fa-chevron-left left-arrow" @click="prevLogo(current)"></i>
+            <img src="@/assets/img/Ungu.png" class="ungu" v-show="current == 4">
+            <img src="@/assets/img/Hijau.png" class="hijau" v-show="current == 3">
+            <img src="@/assets/img/Biru.png" class="biru" v-show="current == 2">
+            <img src="@/assets/img/Kuning.png" class="kuning" v-show="current == 1">
+            <img src="@/assets/img/Orange.png" class="`orange" v-show="current == 0">
+            <i class="fas fa-chevron-right right-arrow" @click="nextLogo(current)"></i>
+          </div>
+
+          <div class="filosofi__content">
+            <h3 class="filosofi__content-title">{{ title }}</h3>
+            <p class="filosofi__content-color">{{ color }}</p>
+            <p class="filosofi__content-description">{{ description }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -93,86 +96,67 @@ export default {
 
 <style lang="scss">
 @import '@/assets/scss/_variables.scss';
-
 .logo-section {
+  margin-top: 350px;
   height: 100vh;
-  background: linear-gradient(to bottom, $main-color, darken($main-color, 15%), $main-dark);
 
-  .grid-container {
-    height: 100vh;    
+  .filosofi {
+    width: 100%; 
+    height: 100%;
+    text-align: center;
 
-    .logo-box {
+    &__logo {
+      width: 500px;
+      height: 60%;
+      margin: 0 auto;
+      position: relative;
 
-      .logo-wrapper {
-        position: relative;
-        width: 500px;
-        height: 300px;
-        margin: 0 auto;
+      i {
+        position: absolute;
+        top: 50%;
+        font-size: 64px;
+        color: $main-light;
+        opacity: .75;
+        transition: .4s ease-out;
+        user-select: none;
+        cursor: pointer;
+        &:hover { opacity: 1; }
+        &.left-arrow { left: 0; transform: translate(0, -50%) }
+        &.right-arrow { left: 100%; transform: translate(-100%, -50%) }
+      }
 
-
-        .logo-min {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          margin-left: 75px;
-
-          height: 100%;
-          height: auto;
-        }
-
-        .arrow {
-          font-size: 48px;
-          color: $main-light;
-          opacity: .75;
-          position: absolute;
-          top: 50%;
-          transform: translate(0, -50%);
-          transition: .4s ease-out;
-          user-select: none;
-          cursor: pointer;
-
-          &:hover {
-            opacity: .9;
-          }
-
-          &-left {
-            left: 0;
-          }
-
-          &-right {
-            right: 0;
-            transform: translate(0, -50%);
-          }
-        }
+      img {
+        height: 100%;
+        margin-left: 120px;
       }
     }
 
-    .content-box {
+    &__content {
+      width: 500px;
+      height: 40%;
+      margin: 0 auto;
+      position: relative;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin-top: 25px;
 
-      .content-wrapper {
-        width: 500px;
-        text-align: center;
-        $color-darken: darken($main-light, 25%);
+      &-title {
+        font-family: 'Kendal-Type', sans-serif;
+        font-size: 32px;
+        font-weight: 500;
         color: $main-light;
+      }
 
-        .title {
-          font-size: 32px;
-        }
+      &-color {
+        margin: 12px 0;
+        font-style: italic;
+        color: darken($main-light, 10%);
+      }
 
-        .color {
-          color: $color-darken;
-          font-style: italic;
-          margin: 12px 0;
-        }
-
-        .description {
-          color: $color-darken;
-        }
+      &-description {
+        padding: 0 20px;
+        color: darken($main-light, 10%);
       }
     }
   }

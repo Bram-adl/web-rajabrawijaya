@@ -1,8 +1,10 @@
 <template>
   <div class="event-section">
-    <div class="container container-grid">
-      <h2 class="section-title">Rangkaian Acara</h2>
-      <div class="card-box">
+    <div class="container">
+      <div class="row-title">
+        <h2 class="section-title pt-3">Rangkaian Acara</h2>
+      </div>
+      <div class="row-content justify-between">
         <div class="card" v-for="card in cards" :key="card.id">
           <div class="card-inner">
             <div class="card-front">
@@ -29,7 +31,7 @@
             </div>
           </div>
         </div>
-      </div>      
+      </div>
     </div>
   </div>
 </template>
@@ -65,142 +67,129 @@ export default {
 @import '@/assets/scss/_variables.scss';
 
 .event-section {
-  background: $main-dark;
-  color: $main-light;
+  height: 100vh;
 
-  .container {
-    height: 100vh;
-  }
+  .card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
 
-  .card-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin: 25px 0;
 
-    margin-top: 50px;
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
 
-    .card {
-      width: 250px;
-      height: 350px;
-      perspective: 1000px;
-
-      &:nth-child(2) {
-        margin: 0 25px;
-      }
-
-      &:hover {
-        .card-inner {
-          transform: rotateY(180deg);
-        }
-      }
-
-      &-inner {
-        position: relative;
+      .card-front,
+      .card-back {
+        background: $main-dark;
+        position: absolute;
         width: 100%;
         height: 100%;
-        text-align: center;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
+        border-radius: 16px;
+        backface-visibility: hidden;
+      }
 
-        .card-front,
-        .card-back {
-          width: 100%;
-          height: 100%;
+      .card-front {
+        .img {
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+
           position: absolute;
-          left: 0;
-          top: 0;
-          background: #212121;
-          box-shadow: 0 16px 16px rgba(0, 0, 0, 0.32);
-          border-radius: 16px;
-          backface-visibility: hidden;
-        }
-        
-        .card-front {
-          position: relative;
 
-          .img {
-            width: 15%;
-            height: auto;
-            position: absolute;
+          &.top-left {
+            top: 16px;
+            left: 16px;
           }
-
-          .top-left { left: 5%; top: 5%; }
-          .top-right { right: 5%; top: 5%; transform: rotate(90deg) }
-          .bottom-left { left: 5%; bottom: 5%; transform: rotate(-90deg); }
-          .bottom-right { right: 5%; bottom: 5%; transform: rotate(-180deg); }
-          .img-footer {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translate(-50%, 0);
-            width: 50%;
+          &.top-right {
+            top: 16px;
+            right: 16px;
+            transform: rotate(90deg);
           }
-
-          &-item {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            &-img {
-              width: 100%;
-            }
-            &-text {
-              color: #ffcf08;
-              font-size: 24px;
-            }
+          &.bottom-left {
+            left: 16px;
+            bottom: 16px;
+            transform: rotate(-90deg);
           }
-        }
-
-        .card-back {
-          overflow: hidden;
-          transform: rotateY(180deg);
-
-          &-header {
-          height: 100px;
-          position: relative;
-          padding: 12px;
-          
-            &::before {
-              content: '';
-              position: absolute;
-              left: 50%;
-              top: -50%;
-              transform: translateX(-50%);
-              width: 100%;
-              height: 150%;
-              border-radius: 1000px;
-              background: #ffcf08;
-              z-index: -1;
-            }
-            &-img,
-            &-title {
-              position: relative;
-              z-index: 1;
-            }
-            &-img { width: 50px; }
-            &-title { color: #212121; }
-          }
-          
-          &-text {
-            color: #f8f8f8;
-            font-size: 12px;
-            margin-top: 25px;
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.5;
-            padding: 16px;
-            height: calc(100% - 200px);
-            display: flex;
-            align-items: center;
+          &.bottom-right {
+            right: 16px;
+            bottom: 16px;
+            transform: rotate(180deg);
           }
           &-footer {
             position: absolute;
-            max-height: 50px;
-            bottom: 0;
+            top: 100%;
             left: 50%;
-            transform: translate(-50%, 0);
+            transform: translate(-50%, -100%);
+            width: 200px;
+            height: auto;
+          }
+        }
+
+        &-item {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          &-img {
+            width: 200px;
+          }
+
+          &-text {
+            color: $main-light;
+            font-family: 'Kendal-Type', sans-serif;
+            font-size: 36px;
+            margin-top: 12px;
           }
         }
       }
+
+      .card-back {
+        transform: rotateY(180deg);
+
+        &-header {
+          background: $yellow;
+          padding: 16px 0;
+          border-radius: inherit;
+          
+          &-img {
+            width: 75px;
+          }
+          &-text {
+            color: $main-dark;
+            font-family: 'Kendal-Type', sans-serif;
+            font-size: 36px;
+            margin-top: 12px;
+          }
+        }
+
+        &-text {
+          color: $main-light;
+          padding: 16px;
+          font-size: 14px;
+        }
+
+        &-footer {
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translate(-50%, -100%);
+          width: 75px;
+          height: auto;
+        }
+      }
+    }
+
+    &:hover {
+      .card-inner { transform: rotateY(180deg); }
     }
   }
 }

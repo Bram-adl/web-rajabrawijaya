@@ -44,27 +44,15 @@ export default {
 <style lang="scss">
 @import '@/assets/scss/_variables.scss';
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 @font-face {
   font-family: 'Kendal-Type';
   src: url('./assets/font/kendal-type/Kendal-Type.ttf.woff');
 }
 
-ul { list-style-type: none; }
-a { text-decoration: none; }
-i { color: inherit; }
-h1, h2, h3, h4 {
-  font-family: 'Kendal-Type', sans-serif;
-}
-img { max-width: 100%; }
-
-html, body {
-  // overflow: hidden;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .app {
@@ -78,24 +66,59 @@ html, body {
   z-index: 9;
   left: 50px;
   top: 30px;
-  width: 75px;
-  height: auto;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  vertical-align: middle;
 }
 
+/* Pre Defined Class */
 .container {
   max-width: 1200px;
   margin: auto;
-  padding: 0 100px;
+}
+
+.row-title {
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row-content {
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .section-title {
-  text-align: center;
+  font-family: 'Kendal-Type', sans-serif;
   font-size: 48px;
   font-weight: 500;
-  padding: 50px 0;
+  text-align: center;
+  color: $main-light;
 }
 
-.title-light {
-  color: $main-light;
+.title-dark {
+  color: $main-dark;
+}
+
+.height-auto {
+  height: auto;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.pt-3 {
+  padding-top: 30px;
+}
+
+a {
+  text-decoration: none;
 }
 </style>

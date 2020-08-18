@@ -1,0 +1,166 @@
+@import '@/assets/scss/_variables.scss';
+
+@media only screen and (max-width: 400px) {
+  .logo {
+    top: 5%;
+    left: 5%;
+
+    width: 55px;
+    height: 55px;
+  }
+  
+  .hamburger {
+    top: 5%;
+    right: 5%;
+
+    width: 50px;
+    height: 50px;
+  }
+  
+  // Pre Defined Styles
+  .section-title {
+    font-size: 32px;
+  }
+  
+  // Home Section {
+  .home {  
+    .parallax-container {
+      .gunung {
+        object-fit: cover;
+      }
+    }
+  
+    .parallax-sungai {
+      height: 1000px;
+  
+      .sungai {
+        height: 800px;
+      }
+  
+      .about-container {
+        top: unset;
+        bottom: 0%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        width: 100%;
+        padding: 0 25px;
+        text-align: center;
+
+        .about-title {
+          font-size: 20px;
+        }
+  
+        .about-text {
+          font-size: 12px;
+        }
+      }
+    }
+    
+    .title-container {
+      left: 50%;
+      top: 40%;
+      transform: translate(-50%, -40%);
+
+      width: 100%;
+      padding: 0 25px;
+  
+      .title {
+        font-size: 30px;
+  
+        &::before,
+        &::after {
+          width: 20px;
+          height: 5px;
+        }
+      }
+  
+      .subtitle {
+        font-size: 14px;
+        letter-spacing: 1px;
+        white-space: normal;
+      }
+    }
+  }
+  
+  // Logo Section
+  .logo-section {
+    overflow: hidden; /* Because of margin from the logo images */
+
+    width: 80%;
+    margin: 500px auto 0;
+    height: 100vh;
+
+    .filosofi {
+      &__logo {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        i {
+          font-size: 48px;
+        }
+        img {
+          width: 100%;
+          height: auto;
+          margin-left: 125px;
+        }
+      }
+      &__content {
+        width: 100%;
+        &-title {
+          font-size: 28px;
+        }
+        &-description {
+          padding: 0 0;
+        }
+      }
+    }
+  }
+
+  // Event Section
+  .event-section {
+    width: 80%;
+    margin: 0 auto;
+    height: auto;
+  
+    .row-content {
+      height: auto;
+      flex-direction: column;
+    }
+  }
+
+  // What To Do Section
+  .what-to-do-section {
+    padding: 25px 25px 37px;
+  
+    .row-content {
+      flex-direction: column;
+    }
+    
+    .card {
+      &:nth-child(2) {
+        margin: 50px 0;
+      }
+    }
+  }
+
+  // Video Section
+  .video-section {
+    padding: 25px 25px 37px;
+    height: auto;
+  
+    .row-content {
+      height: auto;
+    }
+  
+    img {
+      display: none;
+    }
+  
+    .video {
+      width: 100%;
+      height: auto;
+      margin: 25px auto 0;
+    }
+  }
+}
