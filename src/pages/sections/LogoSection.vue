@@ -97,7 +97,7 @@ export default {
 <style lang="scss">
 @import '@/assets/scss/_variables.scss';
 .logo-section {
-  margin-top: 50vh;
+  margin-top: 50vh + 25vh;
   height: 100vh;
   background: $main-color;
 
