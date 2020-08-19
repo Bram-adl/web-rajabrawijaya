@@ -122,7 +122,7 @@ export default {
     position: absolute;
     left: 50%;
     top: 0;
-    transform: translate(-50%, 100px);
+    transform: translate(-50%, 75px);
     z-index: 4;
 
     color: $main-light;

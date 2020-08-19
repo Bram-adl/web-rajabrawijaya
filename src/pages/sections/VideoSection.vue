@@ -48,6 +48,8 @@ export default {
   }
 
   .btn {
+    position: relative;
+    z-index: 1;
     margin-bottom: 50px;
     margin-top: 50px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

@@ -4,7 +4,7 @@
     <hamburger-menu :clicked="clicked"></hamburger-menu>
     <menu-navigation :menuOpen="menuOpen"></menu-navigation>
 
-    <transition enter-active-class="animate__animated animate__fadeIn" leave-active-class="animate__animated animate__fadeOut">
+    <transition name="menu">
       <router-view v-if="!menuOpen"></router-view>
     </transition>
   </div>
@@ -51,6 +51,10 @@ export default {
   src: url('./assets/font/kendal-type/Kendal-Type.ttf.woff');
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -59,6 +63,7 @@ export default {
 
 .app {
   background: $main-color;
+  font-family: 'Roboto', sans-serif;
 }
 
 .logo {
@@ -125,5 +130,15 @@ export default {
 
 a {
   text-decoration: none;
+}
+
+.menu-enter-active,
+.menu-leave-active {
+  transition: .4s ease-out;
+}
+
+.menu-enter,
+.menu-leave-to {
+  opacity: 0;
 }
 </style>

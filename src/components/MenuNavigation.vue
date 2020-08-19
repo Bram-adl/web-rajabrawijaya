@@ -1,5 +1,5 @@
 <template>
-  <transition name="fade" enter-active-class="animate__animated animate__fadeIn" leave-active-class="animate__animated animate__fadeOut">
+  <transition name="menu">
     <nav class="menu-list" v-if="menuOpen">
         <div class="container container-grid">
           <div class="menu-box">

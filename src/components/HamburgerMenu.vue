@@ -35,11 +35,12 @@ export default {
   right: 50px;
   z-index: 10;
   
-  width: 75px;
-  height: 75px;
+  width: 52px;
+  height: 52px;
 
-  border: 2px solid $main-light;
+  border: 1px solid $main-light;
   border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
 
   display: flex;
   flex-direction: column;
@@ -52,13 +53,13 @@ export default {
 
   &.clicked {
     .hamburger-line:nth-child(1) {
-      transform: rotate(45deg) translate(2px, -6px);
+      transform: rotate(45deg) translateY(-4px);
     }
     .hamburger-line:nth-child(2) {
       opacity: 0;
     }
     .hamburger-line:nth-child(3) {
-      transform: rotate(-45deg) translate(-1px, 5px);
+      transform: rotate(-45deg) translateY(4px);
     }
   }
   &::before {
@@ -67,16 +68,16 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: borderDrippled 1s ease-out infinite alternate;
+    animation: borderDrippled 1s ease-out infinite;
     
     background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid darken($color: $main-light, $amount: 50%);
     border-radius: 50%;
   }
   
   &-line {    
-    width: 30px;
-    height: 3px;
+    width: 24px;
+    height: 1px;
     border-radius: 3px;
     background-color: $main-light;
     transform-origin: 0 0;
@@ -87,6 +88,68 @@ export default {
     }
   }
 }
+
+// .hamburger {  
+//   background: transparent;
+//   outline: 0;
+  
+//   position: absolute;
+//   top: 50px;
+//   right: 50px;
+//   z-index: 10;
+  
+//   width: 75px;
+//   height: 75px;
+
+//   border: 2px solid $main-light;
+//   border-radius: 50%;
+
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+
+//   transition: .4s ease-out;
+
+//   cursor: pointer;
+
+//   &.clicked {
+//     .hamburger-line:nth-child(1) {
+//       transform: rotate(45deg) translate(2px, -6px);
+//     }
+//     .hamburger-line:nth-child(2) {
+//       opacity: 0;
+//     }
+//     .hamburger-line:nth-child(3) {
+//       transform: rotate(-45deg) translate(-1px, 5px);
+//     }
+//   }
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     animation: borderDrippled 1s ease-out infinite alternate;
+    
+//     background-color: transparent;
+//     border: 2px solid rgba(255, 255, 255, 0.5);
+//     border-radius: 50%;
+//   }
+  
+//   &-line {    
+//     width: 30px;
+//     height: 3px;
+//     border-radius: 3px;
+//     background-color: $main-light;
+//     transform-origin: 0 0;
+//     transition: .4s ease-out;
+//     &:nth-child(2) {
+//       transition: 0 !important;
+//       margin: 4px 0;
+//     }
+//   }
+// }
 
 @keyframes borderDrippled {
   0% {
