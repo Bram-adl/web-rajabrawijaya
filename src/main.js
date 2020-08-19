@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import VueRellax from 'vue-rellax'
-
+import VueScrollTo from 'vue-scrollto'
 
 import App from './App.vue'
 import Home from './pages/Home.vue'
@@ -16,6 +16,7 @@ import 'animate.css'
 
 Vue.use(VueRouter)
 Vue.use(VueRellax)
+Vue.use(VueScrollTo)
 
 Vue.config.productionTip = false
 

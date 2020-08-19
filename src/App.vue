@@ -1,5 +1,6 @@
 <template>
   <div id="app" class="app">
+    
     <img src="@/assets/img/LogoIntro.png" alt="logo" class="logo">
     <hamburger-menu :clicked="clicked"></hamburger-menu>
     <menu-navigation :menuOpen="menuOpen"></menu-navigation>
@@ -7,28 +8,35 @@
     <transition name="menu">
       <router-view v-if="!menuOpen"></router-view>
     </transition>
+
+    <button-top :scrolled="scrolled"></button-top>
+
   </div>
 </template>
 
 <script>
 import HamburgerMenu from './components/HamburgerMenu'
 import MenuNavigation from './components/MenuNavigation'
+import ButtonTop from './components/ButtonTop'
 
 export default {
   name: 'App',
   components: {
     HamburgerMenu,
     MenuNavigation,
+    ButtonTop,
   },
   data: () => {
     return {
       menuOpen: false,
       clicked: false,
+      scrolled: false,
     }
   },
   created() {
     this.Fire.$on('toggleMenu', () => this.toggleMenu())
     this.Fire.$on('closeMenu', () => this.closeMenu())
+    this.scrollButton()
   },
   methods: {
     toggleMenu() {
@@ -38,6 +46,15 @@ export default {
     closeMenu() {
       this.menuOpen = false
       this.clicked = false
+    },
+    scrollButton() {
+      window.addEventListener('scroll', () => {
+        if ( window.scrollY > window.innerHeight - window.innerHeight / 4 ) {
+          this.scrolled = true
+        } else {
+          this.scrolled = false
+        }
+      })
     }
   }
 }
