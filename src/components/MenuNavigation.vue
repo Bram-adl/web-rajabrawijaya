@@ -3,7 +3,7 @@
     <nav class="menu-list" v-if="menuOpen">
         <div class="container container-grid">
           <div class="menu-box">
-            <img src="@/assets/img/LogoIntro.png" alt="logo" class="menu-logo">
+            <img src="@/assets/img/logo/LogoIntro.png" alt="logo" class="menu-logo">
           </div>
           <div class="menu-box">
             <div class="menu-links">
@@ -35,6 +35,13 @@
               >
                 <span @click="closeMenu">FAQ</span>
               </router-link>
+              <a 
+                href="#" 
+                class="menu-link"
+                :class="{ 'animate__animated animate__fadeInUp' : menuOpen }"
+              >
+                <span>RAJA Apps</span>
+              </a>
             </div>
             <div class="menu-socials">
               <a 

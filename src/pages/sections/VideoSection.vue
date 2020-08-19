@@ -5,7 +5,7 @@
         <h2 class="section-title pt-3">Lihat Keseruan RAJA Tahun Lalu!</h2>
       </div>
       <div class="row-content flex-column">
-        <img v-rellax="{ speed: 4 }" src="@/assets/img/gunung.png" alt="gunung">
+        <img v-rellax="{ speed: 4 }" src="@/assets/img/hero/gunung.png" alt="gunung">
         <iframe src="https://www.youtube.com/embed/SJ9GCuu-riw" class="video" frameborder="0"></iframe>
         <button class="btn btn-block">Nyalakan Notifikasi</button>
       </div>

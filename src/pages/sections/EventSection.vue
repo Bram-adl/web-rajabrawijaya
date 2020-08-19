@@ -8,11 +8,11 @@
         <div class="card" v-for="card in cards" :key="card.id">
           <div class="card-inner">
             <div class="card-front">
-              <img src="@/assets/img/card1-corner.svg" class="img top-left">
-              <img src="@/assets/img/card1-corner.svg" class="img top-right">
-              <img src="@/assets/img/card1-corner.svg" class="img bottom-left">
-              <img src="@/assets/img/card1-corner.svg" class="img bottom-right">
-              <img src="@/assets/img/card1-mid-bottom.svg" class="img-footer">
+              <img src="@/assets/img/cards/card1-corner.svg" class="img top-left">
+              <img src="@/assets/img/cards/card1-corner.svg" class="img top-right">
+              <img src="@/assets/img/cards/card1-corner.svg" class="img bottom-left">
+              <img src="@/assets/img/cards/card1-corner.svg" class="img bottom-right">
+              <img src="@/assets/img/cards/card1-mid-bottom.svg" class="img-footer">
 
               <div class="card-front-item">
                 <img :src="card.img1" class="card-front-item-img">
@@ -27,7 +27,7 @@
               <div class="card-back-text">
                 <p>{{ card.description }}</p>
               </div>
-              <img src="@/assets/img/card2-mid-bottom.svg" class="card-back-footer">
+              <img src="@/assets/img/cards/card2-mid-bottom.svg" class="card-back-footer">
             </div>
           </div>
         </div>
@@ -46,22 +46,22 @@ export default {
           id: 0,
           title: 'OHLKM',
           description: 'Open House Lembaga Kedaulatan Mahasiswa (OHLKM) merupakan penutup dari serangkaian acara RAJA Brawijaya. Di sana, kamu bisa memilih Unit Kegiatan Mahasiswa (UKM) dan LKM di Universitas Brawijaya sesuai minat dan bakal di bidang akademik maupun non-akademik.',
-          img1: require('@/assets/img/oh1.svg'),
-          img2: require('@/assets/img/oh2.svg'),
+          img1: require('@/assets/img/cards/oh1.svg'),
+          img2: require('@/assets/img/cards/oh2.svg'),
         },
         {
           id: 1,
           title: 'PKKMU',
           description: 'Pengenalan Kehidupan Kampus Mahasiswa Universitas Brawijaya (PKKMU) adalah kegiatan penyambutan mahasiswa baru sebagai bentuk kegiatan yang bertujuan untuk membuat rasa kebanggan dan penanaman nilai kepada mahasiswa baru akan almamater kita bersama, Universitas Brawijaya.',
-          img1: require('@/assets/img/rektor1.svg'),
-          img2: require('@/assets/img/rektor2.svg'),
+          img1: require('@/assets/img/cards/rektor1.svg'),
+          img2: require('@/assets/img/cards/rektor2.svg'),
         },
         {
           id: 2,
           title: 'PBPK',
           description: 'Pembinaan Budi Pekerti dan Kepemimpinan (PBPK) merupakan rangkaian acara yang bertujuan untuk melakukan pembinaan karakter keagamaan, melatih jiwa kepemimpinan dan mengajarkan kita untuk dapat membela Negara Kesatuan Republik Indonesia (NKRI) dan mahasiswa baru Universitas Brawijaya.',
-          img1: require('@/assets/img/pbpk1.svg'),
-          img2: require('@/assets/img/pbpk2.svg'),
+          img1: require('@/assets/img/cards/pbpk1.svg'),
+          img2: require('@/assets/img/cards/pbpk2.svg'),
         },
       ]
     }

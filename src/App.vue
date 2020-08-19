@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="app">
     
-    <img src="@/assets/img/LogoIntro.png" alt="logo" class="logo">
+    <img src="@/assets/img/logo/LogoIntro.png" alt="logo" class="logo">
     <hamburger-menu :clicked="clicked"></hamburger-menu>
     <menu-navigation :menuOpen="menuOpen"></menu-navigation>
 
