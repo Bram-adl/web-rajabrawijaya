@@ -9,6 +9,7 @@ import Adhikara from './pages/Adhikara'
 import Adhikara_detail from './pages/Adhikara_detail'
 import Gallery from './pages/Gallery'
 import FAQ from './pages/FAQ'
+import './registerServiceWorker'
 
 Vue.config.productionTip = false
 
