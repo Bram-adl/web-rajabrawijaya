@@ -19,17 +19,7 @@ export default {
     toggleMenu() {
       this.Fire.$emit('toggleMenu')
     },
-    changeHamburgerColor() {
-      this.$refs.hamburger.classList.add('scrolled')
-    },
-    resetHamburgerColor() {
-      this.$refs.hamburger.classList.remove('scrolled')
-    }
   },
-  created() {
-    this.Fire.$on('changeHamburgerColor', () => this.changeHamburgerColor())
-    this.Fire.$on('resetHamburgerColor', () => this.resetHamburgerColor())
-  }
 }
 </script>
 
@@ -40,7 +30,7 @@ export default {
   background: transparent;
   outline: 0;
   
-  position: fixed;
+  position: absolute;
   top: 50px;
   right: 50px;
   z-index: 10;
@@ -48,7 +38,7 @@ export default {
   width: 75px;
   height: 75px;
 
-  border: 1px solid $main-light;
+  border: 2px solid $main-light;
   border-radius: 50%;
 
   display: flex;
@@ -62,13 +52,13 @@ export default {
 
   &.clicked {
     .hamburger-line:nth-child(1) {
-      transform: rotate(45deg) translateY(-4px);
+      transform: rotate(45deg) translate(2px, -6px);
     }
     .hamburger-line:nth-child(2) {
       opacity: 0;
     }
     .hamburger-line:nth-child(3) {
-      transform: rotate(-45deg) translateY(4px);
+      transform: rotate(-45deg) translate(-1px, 5px);
     }
   }
   &::before {
@@ -80,13 +70,13 @@ export default {
     animation: borderDrippled 1s ease-out infinite alternate;
     
     background-color: transparent;
-    border: 1px solid darken($main-light, 25%);
+    border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 50%;
   }
   
   &-line {    
-    width: 24px;
-    height: 1px;
+    width: 30px;
+    height: 3px;
     border-radius: 3px;
     background-color: $main-light;
     transform-origin: 0 0;
@@ -95,14 +85,6 @@ export default {
       transition: 0 !important;
       margin: 4px 0;
     }
-  }
-}
-
-.hamburger.scrolled {
-  border: 1px solid $main-dark;
-
-  .hamburger-line {
-    background: $main-dark;
   }
 }
 

@@ -4,9 +4,10 @@
       <div class="row-title">
         <h2 class="section-title pt-3">Lihat Keseruan RAJA Tahun Lalu!</h2>
       </div>
-      <div class="row-content">
+      <div class="row-content flex-column">
         <img v-rellax="{ speed: 4 }" src="@/assets/img/gunung.png" alt="gunung">
         <iframe src="https://www.youtube.com/embed/SJ9GCuu-riw" class="video" frameborder="0"></iframe>
+        <button class="btn btn-block">Nyalakan Notifikasi</button>
       </div>
     </div>
   </div>
@@ -29,7 +30,7 @@ export default {
 
   img {
     position: absolute;
-    bottom: -1200px;
+    bottom: -2300px;
     z-index: 0;
   }
 
@@ -44,6 +45,28 @@ export default {
     position: relative;
 
     z-index: 1;
+  }
+
+  .btn {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+
+    color: $main-light;
+    background: rgb(175, 50, 175);
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.32);
+
+    padding: 12px 32px;
+    cursor: pointer;
+
+    &:hover {
+      background: darken(rgb(175, 50, 175), 5%);
+    }
   }
 }
 </style>

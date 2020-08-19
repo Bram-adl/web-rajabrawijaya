@@ -1,5 +1,19 @@
 <template>
   <div class="what-to-do-section" ref="observe">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 705.24 688.59" class="circle-spash-1">
+      <g id="Layer_2" data-name="Layer 2">
+        <g id="Sketch">
+          <path class="cls-1" d="M361,0C170.8,0,16.65,154.15,16.65,344.3S170.8,688.59,361,688.59,705.24,534.45,705.24,344.3,551.1,0,361,0Zm0,672.32c-181.16,0-328-146.86-328-328s146.87-328,328-328,328,146.86,328,328S542.11,672.32,361,672.32Z"/>
+          <circle class="cls-2" cx="502.02" cy="37.26" r="33.1"/>
+          <circle class="cls-3" cx="502.02" cy="37.26" r="22.6"/>
+          <circle class="cls-2" cx="582.55" cy="597.78" r="33.1"/>
+          <circle class="cls-3" cx="582.55" cy="597.78" r="22.02"/>
+          <circle class="cls-2" cx="33.1" cy="397.91" r="33.1"/>
+          <circle class="cls-3" cx="33.1" cy="397.91" r="21.5"/>
+        </g>
+      </g>
+    </svg>
+    
     <div class="container">
       <div class="row-title">
        <h2 class="section-title title-dark">What You Have To Do</h2>
@@ -14,6 +28,20 @@
         </div>
       </div>
     </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 705.24 688.59" class="circle-spash-2">
+      <g id="Layer_2" data-name="Layer 2">
+        <g id="Sketch">
+          <path class="cls-1" d="M361,0C170.8,0,16.65,154.15,16.65,344.3S170.8,688.59,361,688.59,705.24,534.45,705.24,344.3,551.1,0,361,0Zm0,672.32c-181.16,0-328-146.86-328-328s146.87-328,328-328,328,146.86,328,328S542.11,672.32,361,672.32Z"/>
+          <circle class="cls-2" cx="502.02" cy="37.26" r="33.1"/>
+          <circle class="cls-3" cx="502.02" cy="37.26" r="22.6"/>
+          <circle class="cls-2" cx="582.55" cy="597.78" r="33.1"/>
+          <circle class="cls-3" cx="582.55" cy="597.78" r="22.02"/>
+          <circle class="cls-2" cx="33.1" cy="397.91" r="33.1"/>
+          <circle class="cls-3" cx="33.1" cy="397.91" r="21.5"/>
+        </g>
+      </g>
+    </svg>
   </div>
 </template>
 
@@ -44,32 +72,13 @@ export default {
       ]
     }
   },
-  mounted() {
-    this.checkScroll()
-  },
-  methods: {
-    checkScroll() {
-      
-      window.addEventListener('scroll', () => {
-        const observed = this.$refs.observe
-        const observedTop = observed.getBoundingClientRect().top
-        const observedHeight = observed.clientHeight - 100
-
-        if ( observedTop < 100 && observedTop > parseInt(`-${observedHeight}`) ) {
-          this.Fire.$emit('changeHamburgerColor')
-        } else {
-          this.Fire.$emit('resetHamburgerColor')
-        }
-      })
-    }
-  },
   filters: {
     formatText(text) {
       if ( text.length > 80 ) {
         return text.slice(0, 81) + '...'
       }
     }
-  }
+  },
 }
 </script>
 
@@ -79,7 +88,9 @@ export default {
 .what-to-do-section {
   height: auto;
   background: $main-light;
-  padding-bottom: 25px;
+  padding: 25px 0 50px;
+  position: relative;
+  overflow: hidden;
   
   .card {
     width: 300px;
@@ -87,6 +98,9 @@ export default {
     background-color: $main-light;
     box-shadow: 4px 16px 16px rgba(0, 0, 0, 0.16);
     overflow: hidden;
+
+    position: relative;
+    z-index: 1;
 
     transition: .4s ease-out;
 
@@ -121,6 +135,62 @@ export default {
         }
       }
     }
+  }
+}
+
+.cls-1 {
+  fill: #47b39d;
+}
+
+.cls-2 {
+  fill: #ffc764;
+}
+
+.cls-3 {
+  fill: #477f7e;
+}
+
+.circle-spash-1,
+.circle-spash-2 {
+  position: absolute;
+  z-index: 0;
+  width: 100px;
+  height: 100px;
+  animation: rotation 10s ease-out infinite alternate;
+  transition: .4s ease-out;
+}
+
+.circle-spash-2 {
+  animation: rotation 24s ease-out infinite alternate-reverse;
+}
+
+@keyframes rotation {
+  0% {
+    left: 0;
+    top: 15%;
+  }
+  25% {
+    left: 50%;
+    top: 70%;
+    transform: rotate(360deg);
+  }
+  33% {
+    left: 54%;
+    top: 65%;
+    transform: rotate(-180deg);
+  }
+  50% {
+    left: 32%;
+    top: 30%;
+    transform: rotate(360deg) scale(3);
+  }
+  75% {
+    left: 76%;
+    top: 55%;
+  }
+  100% {
+    left: 100%;
+    top: 0;
   }
 }
 </style>

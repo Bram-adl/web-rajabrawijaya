@@ -44,6 +44,11 @@ export default {
     WhatToDo,
     VideoSection,
   },
+  
+  beforeDestroy() {
+    this.Fire.$off('changeHamburgerColor')
+    this.Fire.$off('resetHamburgerColor')
+  }
 };
 </script>
 
@@ -58,6 +63,7 @@ export default {
   .parallax-container {
     width: 100%;
     height: 100%;
+    position: relative;
 
     .gunung {
       width: 100%;
@@ -67,12 +73,22 @@ export default {
 
   .parallax-sungai {
     width: 100%;
-    height: calc(100vh + 300px);
+    height: 150vh;
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 4;
+    z-index: 5;
 
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 10vh;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0));
+      left: 0;
+      top: 0;
+    }
+    
     .sungai {
       width: 100%;
       height: 1250px;
@@ -107,11 +123,11 @@ export default {
     left: 50%;
     top: 0;
     transform: translate(-50%, 100px);
-    z-index: 2;
+    z-index: 4;
 
     color: $main-light;
     text-align: center;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.32);
+    text-shadow: 0 8px 12px rgba(0, 0, 0, 0.48);
 
     .title {
       font-family: 'Kendal-Type', sans-serif;
@@ -144,8 +160,7 @@ export default {
       display: inline-block;
       font-size: 24px;
       font-weight: normal;
-      letter-spacing: 2px;
-      opacity: .8;
+      letter-spacing: 2px;;
       white-space: nowrap;
     }
   }

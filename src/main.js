@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 import VueRellax from 'vue-rellax'
 
+
 import App from './App.vue'
 import Home from './pages/Home.vue'
 import Adhikara from './pages/Adhikara.vue'
@@ -15,7 +16,6 @@ import 'animate.css'
 
 Vue.use(VueRouter)
 Vue.use(VueRellax)
-
 
 Vue.config.productionTip = false
 

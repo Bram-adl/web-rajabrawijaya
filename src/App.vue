@@ -4,7 +4,9 @@
     <hamburger-menu :clicked="clicked"></hamburger-menu>
     <menu-navigation :menuOpen="menuOpen"></menu-navigation>
 
-    <router-view></router-view>
+    <transition enter-active-class="animate__animated animate__fadeIn" leave-active-class="animate__animated animate__fadeOut">
+      <router-view v-if="!menuOpen"></router-view>
+    </transition>
   </div>
 </template>
 
@@ -56,8 +58,6 @@ export default {
 }
 
 .app {
-  width: 100%;
-  font-family: 'Roboto', sans-serif;
   background: $main-color;
 }
 
@@ -76,22 +76,27 @@ export default {
 .container {
   max-width: 1200px;
   margin: auto;
+
+}
+
+@mixin row($width, $height) {
+  width: $width;
+  height: $height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .row-title {
-  width: 100%;
-  height: 15vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include row(100%, 15vh);
 }
 
 .row-content {
-  width: 100%;
-  height: 85vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include row(100%, 85vh);
+}
+
+.btn-block {
+  display: block;
 }
 
 .section-title {
@@ -114,8 +119,8 @@ export default {
   justify-content: space-between;
 }
 
-.pt-3 {
-  padding-top: 30px;
+.flex-column {
+  flex-direction: column;
 }
 
 a {

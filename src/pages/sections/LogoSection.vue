@@ -97,8 +97,9 @@ export default {
 <style lang="scss">
 @import '@/assets/scss/_variables.scss';
 .logo-section {
-  margin-top: 350px;
+  margin-top: 50vh;
   height: 100vh;
+  background: $main-color;
 
   .filosofi {
     width: 100%; 
