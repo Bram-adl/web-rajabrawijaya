@@ -27,7 +27,7 @@ export default {
   bottom: 75px;
   width: 50px;
   height: 50px;
-  z-index: 2;
+  z-index: 9;
   outline: none;
   border: none;
   border-radius: 4px;

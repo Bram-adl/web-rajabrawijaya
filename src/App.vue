@@ -78,6 +78,7 @@ a {
 .app {
   background: $main-color;
   font-family: 'Roboto', sans-serif; /* Default Font */
+  overflow: hidden;
 }
 .logo {
   position: absolute;
