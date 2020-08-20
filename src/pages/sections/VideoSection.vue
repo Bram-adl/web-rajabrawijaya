@@ -29,7 +29,7 @@ export default {
   .background__image {
     position: absolute;
     left: 0;
-    bottom: -1200px;
+    bottom: -2000px;
     width: 100%;
     height: 100%;
     z-index: 0;
