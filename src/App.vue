@@ -116,11 +116,11 @@ a {
   position: relative;
   animation: hideOut 1s ease-out forwards;
   animation-delay: 6s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .video__intro {
-  min-width: 100%;
-  min-height: 100%;
-  position: absolute;
 }
 // Responsives
 @media only screen and (max-width: 400px) {
