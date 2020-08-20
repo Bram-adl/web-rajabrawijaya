@@ -1,28 +1,30 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
 import VueRellax from 'vue-rellax'
+import VueScrollTo from 'vue-scrollto'
 
 import App from './App.vue'
+import Home from './pages/Home.vue'
+import Adhikara from './pages/Adhikara.vue'
+import Gallery from './pages/Gallery.vue'
+import Faq from './pages/Faq.vue'
 
-import Home from './pages/Home'
-import Adhikara from './pages/Adhikara'
-import Adhikara_detail from './pages/Adhikara_detail'
-import Gallery from './pages/Gallery'
-import FAQ from './pages/FAQ'
-
-Vue.config.productionTip = false
-
-Vue.prototype.$eventBus = new Vue()
+import 'animate.css'
 
 Vue.use(VueRouter)
 Vue.use(VueRellax)
+Vue.use(VueScrollTo)
+
+Vue.config.productionTip = false
+
+Vue.prototype.Fire = new Vue()
 
 const routes = [
   { path: '/', component: Home },
   { path: '/adhikara', component: Adhikara },
-  { path: '/adhikara/:id', component: Adhikara_detail },
   { path: '/gallery', component: Gallery },
-  { path: '/faq', component: FAQ },
+  { path: '/faq', component: Faq },
 ]
 
 const router = new VueRouter({

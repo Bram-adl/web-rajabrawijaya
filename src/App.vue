@@ -1,123 +1,163 @@
 <template>
-  <div id="app">
-    <MenuList :showMenu="clicked" />
-    <hamburger :clicked="clicked"></hamburger>
-    <img src="./assets/img/Logo.png" alt="logo" class="logo" />
+  <div id="app" class="app">
+    <div class="video__container" v-if="!done">
+      <video width="500" height="500" autoplay muted class="video__intro">
+        <source src="@/assets/video/introduction.mp4" type="video/mp4">
+        Your Video Doesnt Support
+      </video>
+    </div>
+    <transition name="showApp">
+      <div v-show="done">
+        <img src="@/assets/img/logo/LogoIntro.png" alt="logo" class="logo animate__animated animate__fadeInDown">
+        <hamburger-menu :clicked="clicked"></hamburger-menu>
+        <menu-navigation :menuOpen="menuOpen"></menu-navigation>
 
-    <router-view></router-view>
+        <transition name="menu">
+          <router-view v-if="!menuOpen"></router-view>
+        </transition>
+
+        <button-top :scrolled="scrolled"></button-top>
+      </div>
+    </transition>
   </div>
 </template>
 
 <script>
-import Hamburger from "./components/Hamburger";
-import MenuList from "./components/MenuList";
+import HamburgerMenu from './components/HamburgerMenu'
+import MenuNavigation from './components/MenuNavigation'
+import ButtonTop from './components/ButtonTop'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
-    Hamburger,
-    MenuList,
-  },
-  created() {
-    this.$eventBus.$on("showMenu", () => this.showMenu());
-    this.$eventBus.$on("closeMenu", () => this.closeMenu());
+    HamburgerMenu,
+    MenuNavigation,
+    ButtonTop,
   },
   data: () => {
     return {
+      menuOpen: false,
       clicked: false,
-    };
+      scrolled: false,
+      done: false,
+    }
+  },
+  created() {
+    this.Fire.$on('toggleMenu', () => this.toggleMenu())
+    this.Fire.$on('closeMenu', () => this.closeMenu())
+    this.scrollButton()
+  },
+  mounted() {
+    this.showApp()
   },
   methods: {
-    showMenu() {
-      this.clicked = !this.clicked;
+    toggleMenu() {
+      this.menuOpen = !this.menuOpen
+      this.clicked = !this.clicked
     },
     closeMenu() {
-      this.clicked = false;
+      this.menuOpen = false
+      this.clicked = false
     },
-  },
-};
+    scrollButton() {
+      window.addEventListener('scroll', () => {
+        if ( window.scrollY > window.innerHeight - window.innerHeight / 4 ) {
+          this.scrolled = true
+        } else {
+          this.scrolled = false
+        }
+      })
+    },
+    showApp() {
+      setTimeout(() => {
+        this.done = true
+      }, 7000)
+    }
+  }
+}
 </script>
 
 <style lang="scss">
+@import '@/assets/scss/main.scss';
+@font-face {
+  font-family: 'Kendal-Type';
+  src: url('./assets/font/kendal-type/Kendal-Type.ttf.woff');
+}
+::-webkit-scrollbar {
+  display: none; /* Removing Default Scroll Bar For Convenient */
+}
 * {
-  --main: #160716;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-/* Google Font */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
-
-/* Font Face */
-@font-face {
-  font-family: "Kendal-Type";
-  src: url("assets/Kendal-Type/Kendal-Type.ttf.woff") format("woff");
-}
-
-#app {
-  font-family: "Kendal-Type", sans-serif;
-  font-size: 16px;
-
-  background-color: #f8f8f8;
-
-  width: 100%;
-  min-height: 100vh;
-}
-
-/* Resets */
 a {
   text-decoration: none;
-  color: inherit;
 }
-
-h2 {
-  font-size: 48px;
-  font-weight: normal;
-  text-align: center;
-  color: #f8f8f8;
+.app {
+  background: $main-color;
+  font-family: 'Roboto', sans-serif; /* Default Font */
+  overflow: hidden;
 }
-
-.section-title p {
-  color: darken($color: #f8f8f8, $amount: 20%);
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-  font-weight: normal;
-}
-
-// Logo Styles
 .logo {
   position: absolute;
-  top: 10%;
-  left: 5%;
-  transform: translate(0, -50%);
-  z-index: 10;
-
+  z-index: 9;
+  top: 50px;
+  left: 50px;
   width: 100px;
+  height: 100px;
+  object-fit: contain; /* Preserve Image Dimension */
 }
-
-/* Animations */
-@keyframes borderDrippled {
-  0% {
-    width: 100%;
-    height: 100%;
+.video__container {
+  position: fixed;
+  z-index: 0;
+  height: 100vh;
+  background: #000;
+  position: relative;
+  animation: hideOut 1s ease-out forwards;
+  animation-delay: 6s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video__intro {
+}
+// Responsives
+@media only screen and (max-width: 400px) {
+  .logo {
+    top: 25px;
+    left: 25px;
+    width: 55px;
+    height: 55px;
   }
-  100% {
-    width: 150%;
-    height: 150%;
+}
+@media only screen and (min-width: 401px) and (max-width: 768px) {
+  .logo {
+    top: 40px;
+    left: 40px;
+    width: 60px;
+    height: 60px;
   }
 }
-
-// Vue JS Animation
-.textShow-enter-active,
-.textShow-leave-active {
-  transition: 2s ease-out;
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .logo {
+    width: 75px;
+    height: 75px;
+  }
 }
-
-.textShow-enter,
-.textShow-leave-to {
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  .logo {
+    width: 85px;
+    height: 85px;
+  }
+}
+// Vue JS Animations
+.menu-enter-active,
+.menu-leave-active {
+  transition: .4s ease-out;
+}
+.menu-enter,
+.menu-leave-to {
   opacity: 0;
-  transform: translateY(64px);
 }
 </style>

@@ -1,230 +1,196 @@
 <template>
-  <section id="whatToDo" class="section">
-    <transition name="textShow">
-      <div class="section-title" v-if="show">
-        <h2>What You Have To Do</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, suscipit?</p>
+  <div class="what-to-do-section" ref="observe">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 705.24 688.59" class="circle-spash-1">
+      <g id="Layer_2" data-name="Layer 2">
+        <g id="Sketch">
+          <path class="cls-1" d="M361,0C170.8,0,16.65,154.15,16.65,344.3S170.8,688.59,361,688.59,705.24,534.45,705.24,344.3,551.1,0,361,0Zm0,672.32c-181.16,0-328-146.86-328-328s146.87-328,328-328,328,146.86,328,328S542.11,672.32,361,672.32Z"/>
+          <circle class="cls-2" cx="502.02" cy="37.26" r="33.1"/>
+          <circle class="cls-3" cx="502.02" cy="37.26" r="22.6"/>
+          <circle class="cls-2" cx="582.55" cy="597.78" r="33.1"/>
+          <circle class="cls-3" cx="582.55" cy="597.78" r="22.02"/>
+          <circle class="cls-2" cx="33.1" cy="397.91" r="33.1"/>
+          <circle class="cls-3" cx="33.1" cy="397.91" r="21.5"/>
+        </g>
+      </g>
+    </svg>
+    
+    <div class="container">
+      <div class="row-title">
+       <h2 class="section-title title-dark">What You Have To Do</h2>
       </div>
-    </transition>
-
-    <div class="section-content" ref="observe">
-      <div class="section-content-wrapper">
-        <div class="section-content-indicator">
-          <i class="fas fa-chevron-left"></i>
-        </div>
-        <transition name="show-alt">
-          <div class="section-content-card twibbon" v-if="show">
-            <div class="section-content-card-title">
-              <h3>Twibbon</h3>
-            </div>
-            <div class="section-content-card-description">
-              <p>Jangan lupa posting twibbon RAJA Brawijaya dengan foto favorit kamu!</p>
-            </div>
+      <div class="row-content height-auto justify-between">
+        <div class="card" v-for="card in cards" :key="card.id">
+          <h3 class="card-title">{{ card.title }}</h3>
+          <p class="card-text">{{ card.text | formatText() }}</p>
+          <div class="card-footer" :style="'background:' + card.color">
+            <a href="#">Lihat lebih</a>
           </div>
-        </transition>
-        <transition name="show-alt">
-          <div class="section-content-card penugasan" v-if="show">
-            <div class="section-content-card-title">
-              <h3>Penugasan</h3>
-            </div>
-            <div class="section-content-card-description">
-              <p>Segala macam keperluan Ospek Online kamu ada di sini. Yuk langsung cek Penugasan kamu di RAJA Apps!</p>
-            </div>
-          </div>
-        </transition>
-        <transition name="show-alt">
-          <div class="section-content-card buku-panduan" v-if="show">
-            <div class="section-content-card-title">
-              <h3>Buku Panduan</h3>
-            </div>
-            <div class="section-content-card-description">
-              <p>Segala macam keperluan Ospek Online kamu ada di sini. Yuk langsung cek Penugasan kamu di RAJA Apps!</p>
-            </div>
-          </div>
-        </transition>
-        <div class="section-content-indicator">
-          <i class="fas fa-chevron-right"></i>
         </div>
       </div>
     </div>
-  </section>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 705.24 688.59" class="circle-spash-2">
+      <g id="Layer_2" data-name="Layer 2">
+        <g id="Sketch">
+          <path class="cls-1" d="M361,0C170.8,0,16.65,154.15,16.65,344.3S170.8,688.59,361,688.59,705.24,534.45,705.24,344.3,551.1,0,361,0Zm0,672.32c-181.16,0-328-146.86-328-328s146.87-328,328-328,328,146.86,328,328S542.11,672.32,361,672.32Z"/>
+          <circle class="cls-2" cx="502.02" cy="37.26" r="33.1"/>
+          <circle class="cls-3" cx="502.02" cy="37.26" r="22.6"/>
+          <circle class="cls-2" cx="582.55" cy="597.78" r="33.1"/>
+          <circle class="cls-3" cx="582.55" cy="597.78" r="22.02"/>
+          <circle class="cls-2" cx="33.1" cy="397.91" r="33.1"/>
+          <circle class="cls-3" cx="33.1" cy="397.91" r="21.5"/>
+        </g>
+      </g>
+    </svg>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "what-to-do",
+  name: 'what-to-do',
   data: () => {
     return {
-      show: false,
-    };
+      cards: [
+        {
+          id: 0,
+          title: 'Twibbon',
+          text: 'Jangan lupa untuk posting twibbon RAJA ke instagram kamu dengan foto favoritmu ya!',
+          color: 'rgb(60, 60, 177)',
+        },
+        {
+          id: 1,
+          title: 'Penugasan',
+          text: 'Segala macam keperluan Ospek Online kamu ada di sini. Yuk langsung dicek penugasannya di RAJA Apps!',
+          color: 'rgb(60, 177, 138)',
+        },
+        {
+          id: 2,
+          title: 'Panduan',
+          text: 'Kalau kamu ada pertanyaan atau kebingungan jangan khawatir. Langsung aja dicek panduannya di sini!',
+          color: 'rgb(177, 60, 171)',
+        },
+      ]
+    }
   },
-  mounted() {
-    this.checkScrollLogo();
+  filters: {
+    formatText(text) {
+      if ( text.length > 80 ) {
+        return text.slice(0, 81) + '...'
+      }
+    }
   },
-  methods: {
-    checkScrollLogo() {
-      const options = {
-        rootMargin: "-10px",
-        threshold: 0,
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            this.show = true;
-          } else {
-            this.show = false;
-          }
-        });
-      }, options);
-
-      observer.observe(this.$refs.observe);
-    },
-  },
-};
+}
 </script>
 
-<style lang="scss" scoped>
-@mixin setDimension($width, $height) {
-  width: $width;
-  height: $height;
-}
-
-@mixin displayFlex($direction, $align, $justify) {
-  display: flex;
-  flex-direction: $direction;
-  align-items: $align;
-  justify-content: $justify;
-}
-
-@mixin sectionFormat() {
-  @include setDimension(100%, 100vh);
-  @include displayFlex(column, center, space-between);
-}
-
-@mixin setRelative() {
+<style lang="scss">
+@import '@/assets/scss/main.scss';
+.what-to-do-section {
+  height: auto;
+  background: $main-light;
   position: relative;
-  z-index: 5;
-}
-
-.section {
-  @include setDimension(100%, 100vh);
-  background-color: var(--main);
-
-  &-title {
-    @include displayFlex(column, center, flex-end);
-    @include setDimension(100%, 25%);
-  }
-
-  &-content {
-    @include setDimension(100%, 75%);
-    @include setRelative();
-
-    &-wrapper {
-      @include setDimension(80%, 100%);
-      @include displayFlex(row, center, center);
-      margin: auto;
+  overflow: hidden;
+  .card {
+    width: 300px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    background-color: $main-light;
+    box-shadow: 4px 16px 16px rgba(0, 0, 0, 0.16);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: .4s ease-out;
+    &:hover {
+      transform: translateY(-8px);
     }
-
-    &-card {
-      @mixin formatText($size, $weight) {
-        font-size: $size;
-        font-family: "Poppins", sans-serif;
-        font-weight: $weight;
-        text-align: center;
-      }
-
-      @include setDimension(100%, 300px);
-      margin: 0 25px;
-      padding: 60px 25px;
-
-      border-radius: 2px;
-      position: relative;
-
-      &:nth-child(3) {
-        margin: 0;
-      }
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 30px;
-        background: rgba(255, 255, 255, 0.25);
-      }
-
-      &-title {
-        @include formatText(24px, 500);
-        color: #f8f8f8;
-        text-decoration: underline;
-      }
-
-      &-description {
-        @include formatText(14px, 400);
-        color: darken($color: #f8f8f8, $amount: 10%);
-        margin-top: 25px;
-      }
+    .card-title {
+      font-family: 'Kendal-Type', sans-serif;
+      font-size: 30px;
+      padding: 16px;
     }
-
-    &-indicator {
-      @include setDimension(50px, 50px);
-      @include displayFlex(row, center, center);
-      flex-shrink: 0;
-
-      i {
+    .card-text {
+      font-size: 14px;
+      line-height: 1.5;
+      color: lightslategray !important;
+      padding: 0 16px;
+      margin-bottom: 16px;
+    }
+    .card-footer {
+      background: rgb(177, 60, 171);
+      padding: 16px; 
+      a {
+        color: $main-light;
         display: inline-block;
-        font-size: 3em;
-
-        background: linear-gradient(
-          to top right,
-          rgb(36, 226, 226),
-          rgb(19, 95, 95)
-        );
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-
-        transition: 0.4s ease-out;
-        cursor: pointer;
-      }
-
-      &:first-child:hover {
-        i {
-          transform: translateX(-4px);
-        }
-      }
-
-      &:last-child:hover {
-        i {
+        transition: .4s ease-out;
+        &:hover {
           transform: translateX(4px);
         }
       }
     }
   }
+  // SVG Styles
+  .cls-1 {
+    fill: #47b39d;
+  }
+  .cls-2 {
+    fill: #ffc764;
+  }
+  .cls-3 {
+    fill: #477f7e;
+  }
+  .circle-spash-1,
+  .circle-spash-2 {
+    position: absolute;
+    z-index: 0;
+    width: 100px;
+    height: 100px;
+    animation: rotation 10s ease-out infinite alternate;
+    transition: .4s ease-out;
+  }
+  .circle-spash-2 {
+    animation: rotation 24s ease-out infinite alternate-reverse;
+  }
 }
-
-.twibbon {
-  background-color: blue;
+// Mobile Styles
+@media only screen and (max-width: 400px) {
+  .what-to-do-section {
+    padding-bottom: 25px;
+    .row-content {
+      flex-direction: column;
+    }
+    .card {
+      width: 75%;
+      margin-bottom: 30px;
+    }
+  }
 }
-
-.penugasan {
-  background-color: green;
+// Tablet Styles
+@media only screen and (min-width: 401px) and (max-width: 768px) {
+  .what-to-do-section {
+    padding-bottom: 25px;
+    .row-content {
+      flex-direction: column;
+    }
+    .card {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
 }
-
-.buku-panduan {
-  background-color: rgb(202, 105, 121);
-}
-
-.show-alt-enter-active,
-.show-alt-leave-active {
-  transition: 2s ease-out;
-}
-
-.show-alt-enter,
-.show-alt-leave-to {
-  opacity: 0;
-  transform: translate(0, 25%);
+// Laptop Styles
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .what-to-do-section {
+    padding-bottom: 25px;
+    .row-content {
+      flex-direction: row;
+    }
+    .card {
+      width: 100%;
+      margin-bottom: 10px;
+      &:nth-child(2) {
+        margin-left: 25px;
+        margin-right: 25px;
+      }
+    }
+  }
 }
 </style>

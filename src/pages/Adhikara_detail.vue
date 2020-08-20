@@ -1,3 +1,4 @@
+@@ -1,1049 +0,0 @@
 <template>
   <div class="md:bg-white min-h-full md:overflow-y-auto font-sans bg" id="adhikara">
     <!-- Mobile -->
