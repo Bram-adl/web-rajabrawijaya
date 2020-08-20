@@ -12,40 +12,40 @@
     </div>
 
 <header>
-  <h2 style="color: white; text-shadow: 1px 1px 3px #000; font-size: 50px">Frequently Asked Question</h2>
-  <p style="color: white; text-shadow: 1px 1px 1px #000; font-size: 20px">FAQ adalah kumpulan pertanyaan yang sering ditanyakan.</p>
+  <h2 class="faq-title">Frequently Asked Question</h2>
+  <p class="description">FAQ adalah kumpulan pertanyaan yang sering ditanyakan.</p>
 </header>
 
 <body>
-    <div class="one " @click="isActive = !isActive">
+    <div class="one" @click="oneActive = !oneActive">
       <div class="question">
         <h3>Does this product have what I need?</h3>
         <svg class="control-icon-expand" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" /></svg>
         <svg class="control-icon-close" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" /></svg>
       </div>
-      <div class="answer" v-bind:class="[isActive ? 'close' : 'open']">
+      <div class="answer" v-bind:class="[oneActive ? 'close' : 'open']">
         <p>Totally. Totally does.</p>
       </div>
     </div>
     
-    <div class="one" @click="isActive = !isActive">
+    <div class="one" @click="twoActive = !twoActive">
       <div class="question">
         <h3>Does this product have what I need?</h3>
         <svg class="control-icon-expand" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" /></svg>
         <svg class="control-icon-close" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" /></svg>
       </div>
-      <div class="answer" v-bind:class="[isActive ? 'close' : 'open']">
+      <div class="answer" v-bind:class="[twoActive ? 'close' : 'open']">
         <p>Totally. Totally does.</p>
       </div>
     </div>
     
-    <div class="one" @click="isActive = !isActive">
+    <div class="one" @click="threeActive = !threeActive">
       <div class="question">
         <h3>Does this product have what I need?</h3>
         <svg class="control-icon-expand" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" /></svg>
         <svg class="control-icon-close" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" /></svg>
       </div>
-      <div class="answer" v-bind:class="[isActive ? 'close' : 'open']">
+      <div class="answer" v-bind:class="[threeActive ? 'close' : 'open']">
         <p>Totally. Totally does.</p>
       </div>
     </div>
@@ -58,12 +58,9 @@ export default {
   name: 'faq',
   data: function(){
     return {
-      isActive: true
-    }
-  },
-  methods: {
-    toggleMore: function() {
-      this.isActive = !this.isActive
+      oneActive: true,
+      twoActive: true,
+      threeActive: true
     }
   }
 }
@@ -86,16 +83,6 @@ header {
   flex-direction: column;
   align-items: center;
   /* justify-content: space-between; */
-}
-
-header h2 {
-  letter-spacing: 3px;
-}
-
-h2 {
-  color: black;
-  font-size: 38px;
-  font-weight: 300;
 }
 
 body {
@@ -144,4 +131,40 @@ body {
   height: 0;
 }
 
+.faq-title {
+    color: white; 
+    text-shadow: 1px 1px 3px #000;
+    font-size: 50px;
+}
+
+.description {
+    color: white; 
+    text-shadow: 1px 1px 1px #000;
+    font-size: 20px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .faq-title{
+    font-size: 30px;
+  }
+  body {
+      height: 40vh;
+  }
+  .description{
+    font-size: 12px;
+    margin: 5px;
+  }
+  .one {
+      height: 60px;
+  }
+  .one .question h3 {
+      font-size: 16px;
+  }
+  .question .control-icon-expand , .question .control-icon-close {
+      right: 0px;
+      width: 20px;
+      transform: translate(-50%, -125%);
+  }
+}
 </style>

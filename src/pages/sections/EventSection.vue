@@ -1,5 +1,6 @@
 <template>
   <div class="event-section">
+    <img v-rellax="{ speed: 3 }" src="@/assets/img/visual identity.png" class="img__decoration__1">
     <div class="container">
       <div class="row-title">
         <h2 class="section-title pt-3">Rangkaian Acara</h2>
@@ -33,6 +34,7 @@
         </div>
       </div>
     </div>
+    <img v-rellax="{ speed: 5 }" src="@/assets/img/visual identity.png" class="img__decoration__2">
   </div>
 </template>
 
@@ -70,19 +72,33 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/assets/scss/_variables.scss';
-
+@import '@/assets/scss/main.scss';
 .event-section {
   height: 100vh;
   background: $main-color;
-
+  position: relative;
+  .img__decoration__1,
+  .img__decoration__2 {
+    position: absolute;
+    top: -100%;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 0;
+  }
+  .img__decoration__2 {
+    top: 0;
+    left: unset;
+    right: -50%;
+  }
   .card {
     width: 300px;
     height: 400px;
     perspective: 1000px;
-
     margin: 25px 0;
-
+    position: relative;
+    z-index: 1;
     .card-inner {
       position: relative;
       width: 100%;
@@ -90,7 +106,6 @@ export default {
       text-align: center;
       transition: transform 0.8s;
       transform-style: preserve-3d;
-
       .card-front,
       .card-back {
         background: $main-dark;
@@ -100,15 +115,12 @@ export default {
         border-radius: 16px;
         backface-visibility: hidden;
       }
-
       .card-front {
         .img {
           width: 50px;
           height: 50px;
           object-fit: cover;
-
           position: absolute;
-
           &.top-left {
             top: 16px;
             left: 16px;
@@ -137,7 +149,6 @@ export default {
             height: auto;
           }
         }
-
         &-item {
           width: 100%;
           height: 100%;
@@ -145,11 +156,9 @@ export default {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-
           &-img {
             width: 200px;
           }
-
           &-text {
             color: $main-light;
             font-family: 'Kendal-Type', sans-serif;
@@ -158,15 +167,12 @@ export default {
           }
         }
       }
-
       .card-back {
         transform: rotateY(180deg);
-
         &-header {
           background: $yellow;
           padding: 16px 0;
           border-radius: inherit;
-          
           &-img {
             width: 75px;
           }
@@ -177,26 +183,137 @@ export default {
             margin-top: 12px;
           }
         }
-
         &-text {
           color: $main-light;
           padding: 16px;
-          font-size: 14px;
+          font-size: 16px;
+          line-height: 1.5;
+          max-height: 175px;
+          overflow: scroll;
         }
-
         &-footer {
           position: absolute;
           top: 100%;
           left: 50%;
-          transform: translate(-50%, -100%);
+          transform: translate(-50%, -125%);
           width: 75px;
           height: auto;
         }
       }
     }
-
     &:hover {
       .card-inner { transform: rotateY(180deg); }
+    }
+  }
+}
+// Mobile Styles
+@media only screen and (max-width: 400px) {
+  .event-section {
+    height: auto;  
+    .row-content {
+      height: auto;
+      flex-direction: column;
+      .card {
+        .card-inner {
+          .card-front {
+            .img {
+              &-footer {
+                width: 150px;
+              }
+            }
+            &-item {
+              &-text {
+                font-size: 30px;
+              }
+            }
+          }
+          .card-back {
+            transform: rotateY(180deg);
+            &-header {
+              &-img {
+                width: 75px;
+              }
+              &-text {
+                font-size: 30px;
+              }
+            }
+            &-text {
+              line-height: 1.5;
+              max-height: 175px;
+              overflow: scroll;
+            }
+            &-footer {
+              transform: translate(-50%, -125%);
+              width: 75px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// Tablet Styles
+@media only screen and (min-width: 401px) and (max-width: 768px) {
+  .event-section {
+    height: auto;
+    .row-content {
+      height: auto;
+      flex-direction: column;
+    }
+  }
+}
+// Laptop Styles
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .event-section {
+    height: auto;
+    padding-bottom: 50px;
+    .row-content {
+      height: auto;
+      flex-direction: row;
+      .card {
+        width: 200px;
+        height: 300px;
+        .card-inner {
+          .card-front {
+            .img {
+              width: 30px;
+              height: 30px;
+              &-footer {
+                width: 100px;
+              }
+            }
+            &-item {    
+              &-img {
+                width: 100px;
+              }
+              &-text {
+                font-size: 24px;
+              }
+            }
+          }
+          .card-back {
+            &-header {
+              padding: 12px 0;
+              &-img {
+                width: 30px;
+              }
+              &-text {
+                font-size: 24px;
+              }
+            }
+            &-text {
+              font-size: 14px;
+              line-height: 1.5;
+              max-height: 150px;
+              overflow: scroll;
+            }
+            &-footer {
+              transform: translate(-50%, -125%);
+              width: 50px;
+            }
+          }
+        }
+      }
     }
   }
 }

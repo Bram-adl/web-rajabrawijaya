@@ -83,114 +83,114 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/assets/scss/_variables.scss';
-
+@import '@/assets/scss/main.scss';
 .what-to-do-section {
   height: auto;
   background: $main-light;
-  padding: 25px 0 50px;
   position: relative;
   overflow: hidden;
-  
   .card {
     width: 300px;
+    margin-bottom: 30px;
     border-radius: 8px;
     background-color: $main-light;
     box-shadow: 4px 16px 16px rgba(0, 0, 0, 0.16);
     overflow: hidden;
-
     position: relative;
     z-index: 1;
-
     transition: .4s ease-out;
-
     &:hover {
       transform: translateY(-8px);
     }
-
     .card-title {
       font-family: 'Kendal-Type', sans-serif;
       font-size: 30px;
-      padding: 16px 0 0 16px;
+      padding: 16px;
     }
-
     .card-text {
       font-size: 14px;
       line-height: 1.5;
       color: lightslategray !important;
-      padding: 16px;
+      padding: 0 16px;
+      margin-bottom: 16px;
     }
-
     .card-footer {
       background: rgb(177, 60, 171);
-      padding: 16px;
-      
+      padding: 16px; 
       a {
         color: $main-light;
         display: inline-block;
         transition: .4s ease-out;
-
         &:hover {
           transform: translateX(4px);
         }
       }
     }
   }
-}
-
-.cls-1 {
-  fill: #47b39d;
-}
-
-.cls-2 {
-  fill: #ffc764;
-}
-
-.cls-3 {
-  fill: #477f7e;
-}
-
-.circle-spash-1,
-.circle-spash-2 {
-  position: absolute;
-  z-index: 0;
-  width: 100px;
-  height: 100px;
-  animation: rotation 10s ease-out infinite alternate;
-  transition: .4s ease-out;
-}
-
-.circle-spash-2 {
-  animation: rotation 24s ease-out infinite alternate-reverse;
-}
-
-@keyframes rotation {
-  0% {
-    left: 0;
-    top: 15%;
+  // SVG Styles
+  .cls-1 {
+    fill: #47b39d;
   }
-  25% {
-    left: 50%;
-    top: 70%;
-    transform: rotate(360deg);
+  .cls-2 {
+    fill: #ffc764;
   }
-  33% {
-    left: 54%;
-    top: 65%;
-    transform: rotate(-180deg);
+  .cls-3 {
+    fill: #477f7e;
   }
-  50% {
-    left: 32%;
-    top: 30%;
-    transform: rotate(360deg) scale(3);
+  .circle-spash-1,
+  .circle-spash-2 {
+    position: absolute;
+    z-index: 0;
+    width: 100px;
+    height: 100px;
+    animation: rotation 10s ease-out infinite alternate;
+    transition: .4s ease-out;
   }
-  75% {
-    left: 76%;
-    top: 55%;
+  .circle-spash-2 {
+    animation: rotation 24s ease-out infinite alternate-reverse;
   }
-  100% {
-    left: 100%;
-    top: 0;
+}
+// Mobile Styles
+@media only screen and (max-width: 400px) {
+  .what-to-do-section {
+    padding-bottom: 25px;
+    .row-content {
+      flex-direction: column;
+    }
+    .card {
+      width: 75%;
+      margin-bottom: 30px;
+    }
+  }
+}
+// Tablet Styles
+@media only screen and (min-width: 401px) and (max-width: 768px) {
+  .what-to-do-section {
+    padding-bottom: 25px;
+    .row-content {
+      flex-direction: column;
+    }
+    .card {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+}
+// Laptop Styles
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .what-to-do-section {
+    padding-bottom: 25px;
+    .row-content {
+      flex-direction: row;
+    }
+    .card {
+      width: 100%;
+      margin-bottom: 10px;
+      &:nth-child(2) {
+        margin-left: 25px;
+        margin-right: 25px;
+      }
+    }
   }
 }
 </style>
