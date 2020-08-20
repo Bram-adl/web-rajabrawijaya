@@ -1,14 +1,24 @@
 <template>
   <div id="app" class="app">
-    <img src="@/assets/img/logo/LogoIntro.png" alt="logo" class="logo">
-    <hamburger-menu :clicked="clicked"></hamburger-menu>
-    <menu-navigation :menuOpen="menuOpen"></menu-navigation>
+    <div class="video__container" v-if="!done">
+      <video width="500" height="500" autoplay muted class="video__intro">
+        <source src="@/assets/video/introduction.mp4" type="video/mp4">
+        Your Video Doesnt Support
+      </video>
+    </div>
+    <transition name="showApp">
+      <div v-show="done">
+        <img src="@/assets/img/logo/LogoIntro.png" alt="logo" class="logo animate__animated animate__fadeInDown">
+        <hamburger-menu :clicked="clicked"></hamburger-menu>
+        <menu-navigation :menuOpen="menuOpen"></menu-navigation>
 
-    <transition name="menu">
-      <router-view v-if="!menuOpen"></router-view>
+        <transition name="menu">
+          <router-view v-if="!menuOpen"></router-view>
+        </transition>
+
+        <button-top :scrolled="scrolled"></button-top>
+      </div>
     </transition>
-
-    <button-top :scrolled="scrolled"></button-top>
   </div>
 </template>
 
@@ -29,12 +39,16 @@ export default {
       menuOpen: false,
       clicked: false,
       scrolled: false,
+      done: false,
     }
   },
   created() {
     this.Fire.$on('toggleMenu', () => this.toggleMenu())
     this.Fire.$on('closeMenu', () => this.closeMenu())
     this.scrollButton()
+  },
+  mounted() {
+    this.showApp()
   },
   methods: {
     toggleMenu() {
@@ -53,6 +67,11 @@ export default {
           this.scrolled = false
         }
       })
+    },
+    showApp() {
+      setTimeout(() => {
+        this.done = true
+      }, 7000)
     }
   }
 }
@@ -88,6 +107,20 @@ a {
   width: 100px;
   height: 100px;
   object-fit: contain; /* Preserve Image Dimension */
+}
+.video__container {
+  position: fixed;
+  z-index: 0;
+  height: 100vh;
+  background: #000;
+  position: relative;
+  animation: hideOut 1s ease-out forwards;
+  animation-delay: 6s;
+}
+.video__intro {
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
 }
 // Responsives
 @media only screen and (max-width: 400px) {

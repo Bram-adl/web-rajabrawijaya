@@ -15,8 +15,8 @@
       </div>
 
       <div class="title-container">
-        <h1 class="title">RAJA BRAWIJAYA</h1>
-        <h3 class="subtitle">Rangkaian Acara Jelajah Almamater Universitas Brawijaya</h3>
+        <h1 class="title animate__animated animate__fadeInUp">RAJA BRAWIJAYA</h1>
+        <h3 class="subtitle animate__animated animate__fadeInUp">Rangkaian Acara Jelajah Almamater Universitas Brawijaya</h3>
       </div>
     </div>
 

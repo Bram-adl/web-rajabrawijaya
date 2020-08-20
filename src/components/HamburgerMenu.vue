@@ -1,5 +1,5 @@
 <template>
-  <button class="hamburger" :class="{ clicked: clicked }" @click="toggleMenu" ref="hamburger">
+  <button class="hamburger animate__animated animate__fadeInDown" :class="{ clicked: clicked }" @click="toggleMenu" ref="hamburger">
     <div class="hamburger-line"></div>
     <div class="hamburger-line"></div>
     <div class="hamburger-line"></div>

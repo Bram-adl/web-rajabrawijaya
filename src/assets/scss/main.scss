@@ -80,7 +80,6 @@ $gutter: 30px;
     font-size: 44px;
   }
 }
-
 // Animations
 @keyframes rotation {
   0% {
@@ -119,5 +118,17 @@ $gutter: 30px;
   100% {
     width: 150%;
     height: 150%;
+  }
+}
+@keyframes hideOut {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    display: none;
   }
 }
