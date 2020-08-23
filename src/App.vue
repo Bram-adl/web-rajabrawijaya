@@ -8,7 +8,7 @@
     </div>
     <transition name="showApp">
       <div v-show="done">
-        <img src="@/assets/img/logo/LogoIntro.png" alt="logo" class="logo animate__animated animate__fadeInDown">
+        <img src="@/assets/img/logo/LogoIntro.webp" alt="logo" class="logo animate__animated animate__fadeInDown">
         <hamburger-menu :clicked="clicked"></hamburger-menu>
         <menu-navigation :menuOpen="menuOpen"></menu-navigation>
 
@@ -119,8 +119,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.video__intro {
 }
 // Responsives
 @media only screen and (max-width: 400px) {

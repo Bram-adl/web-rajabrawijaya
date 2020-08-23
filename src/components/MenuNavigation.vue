@@ -3,7 +3,7 @@
     <nav class="menu-list" v-if="menuOpen">
         <div class="container container-grid">
           <div class="menu-box">
-            <img src="@/assets/img/logo/LogoIntro.png" alt="logo" class="menu-logo">
+            <img src="@/assets/img/logo/logo-online.webp" alt="logo" class="menu-logo">
           </div>
           <div class="menu-box">
             <div class="menu-links">
@@ -21,13 +21,13 @@
               >
                 <span @click="closeMenu">Adhikara Info</span>
               </router-link>
-              <router-link 
+              <!-- <router-link 
                 to="/gallery" 
                 class="menu-link" 
                 :class="{ 'animate__animated animate__fadeInUp' : menuOpen }"
               >
                 <span @click="closeMenu">Gallery</span>
-              </router-link>
+              </router-link> -->
               <router-link 
                 to="/faq" 
                 class="menu-link" 
@@ -35,41 +35,41 @@
               >
                 <span @click="closeMenu">FAQ</span>
               </router-link>
-              <a 
+              <!-- <a 
                 href="#" 
                 class="menu-link"
                 :class="{ 'animate__animated animate__fadeInUp' : menuOpen }"
               >
                 <span>RAJA Apps</span>
-              </a>
+              </a> -->
             </div>
             <div class="menu-socials">
               <a 
-                href="#" 
+                href="https://www.facebook.com/rajabrawijaya2019" 
                 class="menu-social" 
                 :class="{ 'animate__animated animate__fadeInUp' : menuOpen }"
                 >
                 <i class="fa fa-facebook"></i></a>
               <a 
-                href="#" 
+                href="https://twitter.com/raja_brawijaya?s=20" 
                 class="menu-social" 
                 :class="{ 'animate__animated animate__fadeInUp' : menuOpen }"
                 >
                 <i class="fa fa-twitter"></i></a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/raja_brawijaya/" 
                 class="menu-social" 
                 :class="{ 'animate__animated animate__fadeInUp' : menuOpen }"
                 >
                 <i class="fa fa-instagram"></i></a>
               <a 
-                href="#" 
+                href="https://timeline.line.me/user/_dbvQNuFTqLQuF6MZ7s1pMIVRv64mnPCk8tMco30?utm_medium=windows&utm_source=desktop&utm_campaign=OA_Profile" 
                 class="menu-social" 
                 :class="{ 'animate__animated animate__fadeInUp' : menuOpen }"
                 >
                 <i class="fab fa-line"></i></a>
               <a 
-                href="#" 
+                href="https://www.youtube.com/channel/UCpNS1e8i6pgkxqxbdIPnUNQ" 
                 class="menu-social" 
                 :class="{ 'animate__animated animate__fadeInUp' : menuOpen }"
                 >
@@ -186,15 +186,15 @@ export default {
       flex-direction: column;
     }
     .menu-logo {
-      width: 100%;
-      height: 100%;
+      width: 75%;
+      height: 75%;
       object-fit: contain;
     }
     .menu-links {
       align-items: center;      
       .menu-link {
-        font-size: 24px;
-        margin: 12px 0;
+        font-size: 30px;
+        margin: 16px 0;
       }
     }
     .menu-socials {

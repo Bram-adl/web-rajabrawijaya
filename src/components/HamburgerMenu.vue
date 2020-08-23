@@ -43,6 +43,16 @@ export default {
   justify-content: center;
   transition: .4s ease-out;
   cursor: pointer;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+  }
   &.clicked {
     .hamburger-line:nth-child(1) {
       transform: translateY(5px) rotate(-45deg);

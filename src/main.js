@@ -5,10 +5,7 @@ import VueRellax from 'vue-rellax'
 import VueScrollTo from 'vue-scrollto'
 
 import App from './App.vue'
-import Home from './pages/Home.vue'
-import Adhikara from './pages/Adhikara.vue'
-import Gallery from './pages/Gallery.vue'
-import Faq from './pages/Faq.vue'
+import './registerServiceWorker'
 
 import 'animate.css'
 
@@ -21,10 +18,10 @@ Vue.config.productionTip = false
 Vue.prototype.Fire = new Vue()
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/adhikara', component: Adhikara },
-  { path: '/gallery', component: Gallery },
-  { path: '/faq', component: Faq },
+  { path: '/', component: () => import(/* webpackChunkName: "home" */ './pages/Home.vue') },
+  { path: '/adhikara', component: () => import(/* webpackChunkName: "adhikara" */ './pages/Adhikara.vue') },
+  { path: '/baca/:id', component: () => import(/* webpackChunkName: "adhikara" */ './pages/Adhikara_detail.vue') },
+  { path: '/faq', component: () => import(/* webpackChunkName: "faq" */ './pages/FAQ.vue') },
 ]
 
 const router = new VueRouter({

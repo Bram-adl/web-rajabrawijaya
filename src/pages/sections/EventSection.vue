@@ -1,6 +1,6 @@
 <template>
   <div class="event-section">
-    <img v-rellax="{ speed: 3 }" src="@/assets/img/visual identity.png" class="img__decoration__1">
+    <img v-rellax="{ speed: 3 }" src="@/assets/img/visual-identity.webp" class="img__decoration__1">
     <div class="container">
       <div class="row-title">
         <h2 class="section-title pt-3">Rangkaian Acara</h2>
@@ -34,7 +34,7 @@
         </div>
       </div>
     </div>
-    <img v-rellax="{ speed: 5 }" src="@/assets/img/visual identity.png" class="img__decoration__2">
+    <img v-rellax="{ speed: 5 }" src="@/assets/img/visual-identity.webp" class="img__decoration__2">
   </div>
 </template>
 
@@ -46,24 +46,25 @@ export default {
       cards: [
         {
           id: 0,
-          title: 'OHLKM',
-          description: 'Open House Lembaga Kedaulatan Mahasiswa (OHLKM) merupakan penutup dari serangkaian acara RAJA Brawijaya. Di sana, kamu bisa memilih Unit Kegiatan Mahasiswa (UKM) dan LKM di Universitas Brawijaya sesuai minat dan bakal di bidang akademik maupun non-akademik.',
-          img1: require('@/assets/img/cards/oh1.svg'),
-          img2: require('@/assets/img/cards/oh2.svg'),
-        },
-        {
-          id: 1,
-          title: 'PKKMU',
-          description: 'Pengenalan Kehidupan Kampus Mahasiswa Universitas Brawijaya (PKKMU) adalah kegiatan penyambutan mahasiswa baru sebagai bentuk kegiatan yang bertujuan untuk membuat rasa kebanggan dan penanaman nilai kepada mahasiswa baru akan almamater kita bersama, Universitas Brawijaya.',
+          title: 'PKKMB',
+          description: 'Pengenalan Kehidupan Kampus Mahasiswa Baru Universitas Brawijaya (PKKMB) adalah kegiatan penyambutan mahasiswa baru sebagai bentuk kegiatan yang bertujuan untuk membuat rasa kebanggan dan penanaman nilai kepada mahasiswa baru akan almamater kita bersama, Universitas Brawijaya.',
           img1: require('@/assets/img/cards/rektor1.svg'),
           img2: require('@/assets/img/cards/rektor2.svg'),
         },
         {
-          id: 2,
+          id: 1,
           title: 'PBPK',
           description: 'Pembinaan Budi Pekerti dan Kepemimpinan (PBPK) merupakan rangkaian acara yang bertujuan untuk melakukan pembinaan karakter keagamaan, melatih jiwa kepemimpinan dan mengajarkan kita untuk dapat membela Negara Kesatuan Republik Indonesia (NKRI) dan mahasiswa baru Universitas Brawijaya.',
           img1: require('@/assets/img/cards/pbpk1.svg'),
           img2: require('@/assets/img/cards/pbpk2.svg'),
+        },
+        
+        {
+          id: 2,
+          title: 'Open House',
+          description: 'Open House Lembaga Kedaulatan Mahasiswa (OH) merupakan penutup dari serangkaian acara RAJA Brawijaya. Di sana, kamu bisa memilih Unit Kegiatan Mahasiswa (UKM) dan LKM di Universitas Brawijaya sesuai minat dan bakal di bidang akademik maupun non-akademik.',
+          img1: require('@/assets/img/cards/oh1.svg'),
+          img2: require('@/assets/img/cards/oh2.svg'),
         },
       ]
     }

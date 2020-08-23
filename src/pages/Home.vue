@@ -2,10 +2,10 @@
   <div class="master-container">
     <div class="home">
       <div class="parallax-container">
-        <img v-rellax="{ speed: 4 }" src="@/assets/img/hero/gunung.png" class="parallax-img gunung">
+        <img v-rellax="{ speed: 4 }" src="@/assets/img/hero/gunung.webp" class="parallax-img gunung">
       </div>
       <div class="parallax-container parallax-sungai">
-        <img v-rellax="{ speed: 5 }" src="@/assets/img/hero/sungai2.png" class="parallax-img sungai">
+        <img v-rellax="{ speed: 5 }" src="@/assets/img/hero/sungai2.webp" class="parallax-img sungai">
         <div class="about-container">
           <h2 class="about-title">Sekilas Tentang RAJA Brawijaya</h2>
           <p
@@ -24,7 +24,7 @@
 
     <event-section></event-section>
 
-    <what-to-do></what-to-do>
+    <!-- <what-to-do></what-to-do> -->
 
     <video-section></video-section>
   </div>
@@ -33,7 +33,7 @@
 <script>
 import LogoSection from "./sections/LogoSection.vue";
 import EventSection from "./sections/EventSection.vue";
-import WhatToDo from "./sections/WhatToDo.vue";
+// import WhatToDo from "./sections/WhatToDo.vue";
 import VideoSection from "./sections/VideoSection.vue";
 
 export default {
@@ -41,7 +41,7 @@ export default {
   components: {
     LogoSection,
     EventSection,
-    WhatToDo,
+    // WhatToDo,
     VideoSection,
   },
 };
