@@ -1,10 +1,9 @@
 <template>
   <div class="bg font-sans min-h-full">
-    <div class="md:my-0 -my-5 pt-1 md:pb-10 md:text-white">
-      <h1 class="md:text-3xl text-xl font-semibold md:font-semibold text-center mt-10">Adhikara Info</h1>
-      <p class="hidden md:block text-lg text-center font-light mb-10 mt-2">Berikut ini adalah untuk mahasiswa baru 2020
-      </p>
-    </div>
+    <header style="margin-top:100px">
+      <h2 class="adhikara-title" style="margin-to">Adhikara Info</h2>
+      <p class="description">Pengumuman dan berita terbaru terkait RAJA Brawijaya.</p>
+    </header>
     <div class="xl:max-w-5xl container mx-auto px-2">
       <div class="md:flex block">
         <div class="flex-1 m-2 rounded-lg mt-10 kotak-artikel">
@@ -12,16 +11,17 @@
             <a href="#">
               <img src="img/lk10.jpg" alt="" class="rounded-t-lg">
             </a>
-            <a href="#" class="inline-block font-semibold text-blue-500 text-sm mx-5 my-3" style="color:#EFB64F">Publikasi RAJA Brawijaya</a>
+            <a href="#" class="inline-block font-semibold text-blue-500 text-sm mx-5 my-3"
+              style="color:#EFB64F">Publikasi RAJA Brawijaya</a>
             <hr class="mx-5">
-            <h1 class="font-semibold text-lg mx-5 my-2">Judul berita letaknya disini nih, misal panjang pal....</h1>
+            <h1 class="font-semibold text-lg mx-5 my-2">Judul Berita</h1>
             <p class="hidden md:block text-sm mx-5 my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Tempore perferendis deserunt culpa nemo qui non, sequi quos facilis beatae fugit pariatur libero quaerat
               in
               minus tempora nisi ullam neque iste! </p>
-            <a href="#"
+            <router-link to="/baca/1"
               class="flex font-bold text-blue-500 text-sm mx-5 my-3 p-3 transition delay-100 duration-300 ease-in-out hover:bg-blue-900 hover:text-white justify-center">Baca
-              Sekarang</a>
+              Sekarang</router-link>
           </div>
         </div>
         <div class="flex-1 m-2 rounded-lg mt-10 kotak-artikel">
@@ -29,16 +29,17 @@
             <a href="#">
               <img src="img/lk10.jpg" alt="" class="rounded-t-lg">
             </a>
-            <a href="#" class="inline-block font-semibold text-blue-500 text-sm mx-5 my-3" style="color:#EFB64F">Publikasi RAJA Brawijaya</a>
+            <a href="#" class="inline-block font-semibold text-blue-500 text-sm mx-5 my-3"
+              style="color:#EFB64F">Publikasi RAJA Brawijaya</a>
             <hr class="mx-5">
-            <h1 class="font-semibold text-lg mx-5 my-2">Judul berita letaknya disini nih, misal panjang pal....</h1>
+            <h1 class="font-semibold text-lg mx-5 my-2">Judul Berita</h1>
             <p class="hidden md:block text-sm mx-5 my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Tempore perferendis deserunt culpa nemo qui non, sequi quos facilis beatae fugit pariatur libero quaerat
               in
               minus tempora nisi ullam neque iste! </p>
-            <a href="#"
+            <router-link to="/baca/1"
               class="flex font-bold text-blue-500 text-sm mx-5 my-3 p-3 transition delay-100 duration-300 ease-in-out hover:bg-blue-900 hover:text-white justify-center">Baca
-              Sekarang</a>
+              Sekarang</router-link>
           </div>
         </div>
         <div class="flex-1 m-2 rounded-lg mt-10 kotak-artikel">
@@ -46,16 +47,17 @@
             <a href="#">
               <img src="img/lk10.jpg" alt="" class="rounded-t-lg">
             </a>
-            <a href="#" class="inline-block font-semibold text-blue-500 text-sm mx-5 my-3" style="color:#EFB64F">Publikasi RAJA Brawijaya</a>
+            <a href="#" class="inline-block font-semibold text-blue-500 text-sm mx-5 my-3"
+              style="color:#EFB64F">Publikasi RAJA Brawijaya</a>
             <hr class="mx-5">
-            <h1 class="font-semibold text-lg mx-5 my-2">Judul berita letaknya disini nih, misal panjang pal....</h1>
+            <h1 class="font-semibold text-lg mx-5 my-2">Judul Berita</h1>
             <p class="hidden md:block text-sm mx-5 my-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Tempore perferendis deserunt culpa nemo qui non, sequi quos facilis beatae fugit pariatur libero quaerat
               in
               minus tempora nisi ullam neque iste! </p>
-            <a href="#"
+            <router-link to="/baca/1"
               class="flex font-bold text-blue-500 text-sm mx-5 my-3 p-3 transition delay-100 duration-300 ease-in-out hover:bg-blue-900 hover:text-white justify-center">Baca
-              Sekarang</a>
+              Sekarang</router-link>
           </div>
         </div>
       </div>
@@ -79,8 +81,39 @@
     min-height: 100vh;
   }
 
-  .kotak-artikel{
-    background-color:#0d030d;
+  header {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-between; */
+  }
+
+  .adhikara-title {
+    color: white;
+    text-shadow: 1px 1px 3px #000;
+    font-size: 50px;
+  }
+
+  .description {
+    color: white;
+    text-shadow: 1px 1px 1px #000;
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .adhikara-title {
+      font-size: 30px;
+    }
+
+    .description {
+      font-size: 12px;
+      margin: 5px;
+    }
+  }
+
+  .kotak-artikel {
+    background-color: #0d030d;
     color: #f8f8f2;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.8);
   }

@@ -8,11 +8,11 @@
         <div class="filosofi">
           <div class="filosofi__logo">
             <i class="fas fa-chevron-left left-arrow" @click="prevLogo(current)"></i>
-            <img src="@/assets/img/logo/Ungu.png" class="ungu" v-show="current == 4">
-            <img src="@/assets/img/logo/Hijau.png" class="hijau" v-show="current == 3">
-            <img src="@/assets/img/logo/Biru.png" class="biru" v-show="current == 2">
-            <img src="@/assets/img/logo/Kuning.png" class="kuning" v-show="current == 1">
-            <img src="@/assets/img/logo/Orange.png" class="`orange" v-show="current == 0">
+            <img src="@/assets/img/logo/Ungu.webp" class="ungu" v-show="current == 0">
+            <img src="@/assets/img/logo/Hijau.webp" class="hijau" v-show="current == 1">
+            <img src="@/assets/img/logo/Biru.webp" class="biru" v-show="current == 2">
+            <img src="@/assets/img/logo/Kuning.webp" class="kuning" v-show="current == 3">
+            <img src="@/assets/img/logo/Orange.webp" class="`orange" v-show="current == 4">
             <i class="fas fa-chevron-right right-arrow" @click="nextLogo(current)"></i>
           </div>
           <div class="filosofi__content">

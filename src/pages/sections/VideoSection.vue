@@ -2,20 +2,52 @@
   <div class="video-section">
     <div class="container">
       <div class="row-title">
-        <h2 class="section-title pt-3">Lihat Keseruan RAJA Tahun Lalu!</h2>
+        <h2 class="section-title pt-3">Lihat Keseruan RAJA Tahun Sebelumnya!</h2>
       </div>
       <div class="row-content">
         <iframe src="https://www.youtube.com/embed/SJ9GCuu-riw" class="video" frameborder="0"></iframe>
-        <button class="btn btn-block">Aktifkan Notifikasi RAJA!</button>
+        <button class="btn btn-block"  v-on:click="subscribeToNotifications">Aktifkan Notifikasi RAJA!</button>
       </div>
     </div>
-    <img v-rellax="{ speed: 4 }" src="@/assets/img/hero/gunung.png" alt="gunung" class="background__image">
+    <img v-rellax="{ speed: 4 }" src="@/assets/img/hero/gunung.webp" alt="gunung" class="background__image">
   </div>
 </template>
 
 <script>
+import * as firebase from 'firebase/app'
+import 'firebase/messaging'
+import 'firebase/database'
+var firebaseConfig = {
+    apiKey: "AIzaSyCppZPGspEMOoxRWCq3RVbaC0G17ktwILs",
+    authDomain: "rajabrawijaya.ub.ac.id",
+    //authDomain: "raja-brawijaya-1b316.firebaseapp.com",
+    databaseURL: "https://raja-brawijaya-1b316.firebaseio.com",
+    projectId: "raja-brawijaya-1b316",
+    storageBucket: "raja-brawijaya-1b316.appspot.com",
+    messagingSenderId: "315789839205",
+    appId: "1:315789839205:web:06312e4608c4cb63faef8c",
+    measurementId: "G-15TNG0D62W"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const messaging = firebase.messaging();
+messaging.usePublicVapidKey("BM-ehVX421lBOerft4KhkFwls_E3cobUSZCBRNWOdtAErGmDdE8TqHsFnmUNlPRKtgOA_xo2A1Az2WV8_Iwy-Uk");
+
+
 export default {
-  name: 'video-section'
+  name: 'video-section',
+  methods: {
+    subscribeToNotifications(){
+      messaging.requestPermission()
+        .then(() => {
+          console.log('Have Permission');
+          return messaging.getToken();
+        })
+        .then(function(token){
+          console.log(token);
+        });
+    }
+  },
 }
 </script>
 

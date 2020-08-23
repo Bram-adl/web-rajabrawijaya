@@ -3,7 +3,7 @@
     <nav class="menu-list" v-if="menuOpen">
         <div class="container container-grid">
           <div class="menu-box">
-            <img src="@/assets/img/logo/LogoIntro.png" alt="logo" class="menu-logo">
+            <img src="@/assets/img/logo/logo-online.webp" alt="logo" class="menu-logo">
           </div>
           <div class="menu-box">
             <div class="menu-links">
@@ -21,13 +21,13 @@
               >
                 <span @click="closeMenu">Adhikara Info</span>
               </router-link>
-              <router-link 
+              <!-- <router-link 
                 to="/gallery" 
                 class="menu-link" 
                 :class="{ 'animate__animated animate__fadeInUp' : menuOpen }"
               >
                 <span @click="closeMenu">Gallery</span>
-              </router-link>
+              </router-link> -->
               <router-link 
                 to="/faq" 
                 class="menu-link" 
@@ -35,13 +35,13 @@
               >
                 <span @click="closeMenu">FAQ</span>
               </router-link>
-              <a 
+              <!-- <a 
                 href="#" 
                 class="menu-link"
                 :class="{ 'animate__animated animate__fadeInUp' : menuOpen }"
               >
                 <span>RAJA Apps</span>
-              </a>
+              </a> -->
             </div>
             <div class="menu-socials">
               <a 
