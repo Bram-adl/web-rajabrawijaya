@@ -21,7 +21,7 @@ const routes = [
   { path: '/', component: () => import(/* webpackChunkName: "home" */ './pages/Home.vue') },
   { path: '/adhikara', component: () => import(/* webpackChunkName: "adhikara" */ './pages/Adhikara.vue') },
   { path: '/baca/:id', component: () => import(/* webpackChunkName: "adhikara" */ './pages/Adhikara_detail.vue') },
-  { path: '/faq', component: () => import(/* webpackChunkName: "faq" */ './pages/FAQ.vue') },
+  { path: '/faq', component: () => import(/* webpackChunkName: "faq" */ './pages/Faq.vue') },
 ]
 
 const router = new VueRouter({
