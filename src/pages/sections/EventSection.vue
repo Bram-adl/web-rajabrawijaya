@@ -1,6 +1,6 @@
 <template>
   <div class="event-section">
-    <img v-rellax="{ speed: 3 }" src="@/assets/img/visual-identity.webp" class="img__decoration__1">
+    <img v-rellax="{ speed: 3 }" src="@/assets/img/visual-identity.svg" class="img__decoration__1">
     <div class="container">
       <div class="row-title">
         <h2 class="section-title pt-3">Rangkaian Acara</h2>
@@ -34,7 +34,7 @@
         </div>
       </div>
     </div>
-    <img v-rellax="{ speed: 5 }" src="@/assets/img/visual-identity.webp" class="img__decoration__2">
+    <img v-rellax="{ speed: 5 }" src="@/assets/img/visual-identity.svg" class="img__decoration__2">
   </div>
 </template>
 

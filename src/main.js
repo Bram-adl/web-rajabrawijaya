@@ -8,6 +8,11 @@ import App from './App.vue'
 import './registerServiceWorker'
 
 import 'animate.css'
+import Tawk from 'vue-tawk'
+  
+Vue.use(Tawk, {
+    tawkSrc: 'https://embed.tawk.to/5b47696c6d961556373daa55/1egdgplh3'
+})
 
 Vue.use(VueRouter)
 Vue.use(VueRellax)
@@ -20,7 +25,7 @@ Vue.prototype.Fire = new Vue()
 const routes = [
   { path: '/', component: () => import(/* webpackChunkName: "home" */ './pages/Home.vue') },
   { path: '/adhikara', component: () => import(/* webpackChunkName: "adhikara" */ './pages/Adhikara.vue') },
-  { path: '/baca/:id', component: () => import(/* webpackChunkName: "adhikara" */ './pages/Adhikara_detail.vue') },
+  { path: '/baca/:id', component: () => import(/* webpackChunkName: "adhikara" */ './pages/Adhikara_detail.vue'), props: route => ({ query: route.query.id }) },
   { path: '/faq', component: () => import(/* webpackChunkName: "faq" */ './pages/Faq.vue') },
 ]
 

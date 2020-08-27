@@ -23,8 +23,8 @@ export default {
 @import '@/assets/scss/main.scss';
 .button-top {
   position: fixed;
-  right: 50px;
-  bottom: 75px;
+  right: 25px;
+  bottom: 90px;
   width: 50px;
   height: 50px;
   z-index: 9;
@@ -56,12 +56,6 @@ export default {
   }
 }
 // Tablet Styles
-@media only screen and (min-width: 401px) and (max-width: 768px) {
-  .button-top {
-    bottom: 40px;
-    right: 40px;
-  }
-}
 // Laptop Styles
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .button-top {

@@ -27,6 +27,7 @@ import HamburgerMenu from './components/HamburgerMenu'
 import MenuNavigation from './components/MenuNavigation'
 import ButtonTop from './components/ButtonTop'
 
+
 export default {
   name: 'App',
   components: {

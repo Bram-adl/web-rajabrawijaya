@@ -1,104 +1,31 @@
 <template>
   <div class="md:bg-white min-h-full md:overflow-y-auto font-sans bg" id="adhikara" style="padding-top:70px;">
     <header>
-      <img class="headline" src="@/assets/img/test.jpeg">
-      <p class="description" style="margin-top:30px">Univ.brawijaya | 20 Agustus 2020</p>
-      <h2 class="berita-title">Contoh Artikel berita adalah seperti ini</h2>
+      <img class="headline" :src="`${ artikel.headline }`" style="max-height:400px">
+      <p class="description" style="margin-top:30px">{{ artikel.kategori }} | {{ artikel.waktu_publish }}</p>
+      <h2 class="berita-title">{{ artikel.judul }}</h2>
     </header>
 
-    <div class="md:block text-justify teks-penjelasan bg" style="color:#f8f8f2">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, delectus maxime est laborum vel reiciendis
-        rerum
-        corporis blanditiis mollitia excepturi. Laboriosam corporis perspiciatis odit nisi unde. Corrupti inventore
-        aperiam explicabo.
-        Sed officiis accusamus explicabo vel id velit provident impedit ipsam, doloribus deserunt voluptates aut qui
-        dicta
-        natus asperiores cum aliquam ducimus assumenda? Harum voluptas incidunt, optio sunt minima dolore quidem!
-        Dolorum possimus dolores laudantium, tempore corporis nam nesciunt! Voluptate laborum, a eius vitae magnam ut
-        dolorem repellendus itaque excepturi eaque numquam error quisquam iure nemo quaerat ea temporibus corporis
-        deleniti.
-        Explicabo dolorum commodi, et beatae repellendus officiis amet assumenda natus quisquam nemo tempora sapiente
-        nam
-        voluptatibus esse sequi, facilis asperiores totam optio consequatur odio rem? Error accusantium eligendi modi
-        hic.
-        Fugit, nihil iste explicabo rerum quas veniam! Quasi, doloribus accusamus? Obcaecati ad aut repudiandae eaque
-        veritatis, quis fuga minima omnis velit at accusantium voluptates nesciunt deleniti. Temporibus deserunt
-        aliquam
-        fuga!
-      </p>
-      <br>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam vitae nesciunt iure sunt voluptatibus adipisci
-        dolor neque, eum error eligendi deleniti, dicta voluptatem libero rerum inventore et, quas cum quaerat.
-        Nulla magni minus et culpa atque inventore odit, ex cumque aliquam alias, sit nostrum reprehenderit voluptatum
-        velit suscipit modi? Quae in illum sequi similique, facilis iure aspernatur voluptate recusandae asperiores?
-        Libero maiores at provident nemo, repellendus, sint hic corporis ut modi delectus dolor facere et adipisci
-        unde
-        veritatis, sunt laborum explicabo magni in nulla officia nostrum maxime! Quibusdam, quis odio?
-        Rerum ipsam nesciunt animi harum placeat debitis libero quidem, tempora minus, saepe nobis? Quia quibusdam
-        cupiditate eos. Alias, obcaecati, provident sint nesciunt ducimus, autem impedit soluta in voluptates laborum
-        ad.
-        Asperiores eos minima porro commodi voluptates in sed veritatis quae possimus quas ut officiis earum at, ipsa
-        sequi exercitationem culpa recusandae obcaecati, deleniti veniam, magni doloribus voluptas iusto? Ex, ea?
-        Non deserunt consequuntur consectetur exercitationem explicabo quae repellat magnam labore enim incidunt
-        maxime
-        repellendus amet perferendis, molestiae quod qui architecto minus, dolor voluptatum distinctio veritatis natus
-        animi, ut voluptatibus? Dolor?
-        Nihil, molestiae quam, assumenda culpa illum libero porro cumque in aperiam mollitia animi, natus alias aut
-        voluptatum non repudiandae officia iste dolor? Doloribus similique, a aliquid velit cupiditate at dolores.</p>
-      <br>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dicta aperiam fugiat, optio ipsa ipsam,
-        eveniet, veniam quibusdam eum cum iste nihil. Fuga nihil, sapiente excepturi quasi quia eligendi! Ab!
-        Error perferendis iste doloremque, distinctio dolore at delectus facilis. Optio perferendis nemo vero iusto,
-        quaerat nostrum excepturi ea. Animi, pariatur? Alias magni cupiditate dicta eaque numquam, eveniet aut
-        veritatis
-        officiis.
-        Nostrum, eius nisi aspernatur quibusdam unde libero, sequi maxime, nihil obcaecati quaerat eaque impedit
-        consequuntur placeat iusto molestiae deleniti quidem laudantium molestias delectus quam quas ea fugit nam
-        nulla?
-        Enim?
-        Itaque fugiat repudiandae, obcaecati repellat voluptatum ducimus maiores illum saepe excepturi minima eaque,
-        laboriosam rem facilis ea iste ut eveniet officia? Itaque eius libero placeat ex, fuga sit vel in.
-        Repellat vitae, fuga aut inventore blanditiis, expedita totam possimus molestias velit et nesciunt commodi
-        quae
-        explicabo. Molestiae enim temporibus, ipsum vero tempore aliquid, nemo harum omnis velit officiis ipsam
-        impedit?
-        Suscipit consequuntur facere iste nisi harum ab rem commodi alias, earum non. Aspernatur hic tempora
-        consequuntur
-        voluptatem, nihil voluptate ab totam pariatur quis, illo harum optio? Explicabo temporibus nisi sapiente.
-        Voluptatem amet quaerat at aliquam laboriosam ullam. Sapiente ad repellendus veniam accusamus libero tempora
-        ea
-        iste odio voluptate, tenetur maxime fugit quasi inventore magni! Eos vitae architecto quasi eaque assumenda!
-        Sed itaque corporis ipsam? Odit quam cupiditate tenetur delectus itaque? Architecto aliquid optio similique
-        voluptatibus dignissimos. Architecto vel impedit, id debitis esse soluta natus dolorum neque expedita,
-        reiciendis
-        eaque optio.
-        Facere hic quisquam reprehenderit? Consequuntur molestias ratione voluptates modi laborum non impedit
-        consequatur,
-        iste corrupti ea omnis. Quae possimus laudantium sapiente, ipsam magni molestiae at repudiandae, dolore rem
-        fugit
-        quo?
-        Facere temporibus harum ea beatae modi quae vero officiis nam eos, et deserunt quis corporis natus, cumque
-        iste
-        amet pariatur? Aliquam, repudiandae temporibus voluptatem sed soluta doloribus suscipit ullam reiciendis.
-        Lorem
-        ipsum dolor, sit amet consectetur adipisicing elit. Asperiores officia numquam eos tenetur qui illum magnam
-        quisquam architecto nemo modi vero ratione fugiat debitis ex maiores, rerum, quibusdam facilis incidunt?
-        Eveniet culpa aliquam ut exercitationem cupiditate, eius sit quasi, at atque esse quibusdam tempora velit
-        praesentium ducimus! Molestiae, veritatis hic recusandae facilis mollitia eum sunt culpa ad rem error
-        accusantium?
-        Minima, beatae natus tempora nulla magnam illum reiciendis ex obcaecati minus pariatur labore itaque ab
-        laborum
-        cum consequatur aut distinctio. A quibusdam dolores soluta est provident asperiores temporibus ex expedita.
-      </p>
+    <div class="md:block text-justify teks-penjelasan bg" style="color:#f8f8f2!important" v-html="artikel.isi">
     </div>
   </div>
 </template>
 
 <script>
+  import axios from 'axios'
+
   export default {
-    name: 'adhikara'
+    name: 'adhikara_detail',
+    data() {
+      return {
+        artikel: null,
+      }
+    },
+    mounted() {
+      axios
+        .get('https://rajabrawijaya.ub.ac.id/api/artikel/' + this.$route.params.id)
+        .then(response => (this.artikel = response.data.data))
+    }
   }
 </script>
 

@@ -2,7 +2,7 @@
   <div class="video-section">
     <div class="container">
       <div class="row-title">
-        <h2 class="section-title pt-3">Lihat Keseruan RAJA Tahun Sebelumnya!</h2>
+        <h2 class="section-title pt-3">Lihat Keseruan RAJA Brawijaya Tahun Sebelumnya!</h2>
       </div>
       <div class="row-content">
         <iframe src="https://www.youtube.com/embed/SJ9GCuu-riw" class="video" frameborder="0"></iframe>
