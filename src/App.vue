@@ -2,7 +2,7 @@
   <div id="app" class="app">
     <!-- Bumper -->
     <transition name="menu">
-      <div class="video__container" v-show="!done" style="border: 1px solid white;">
+      <div class="video__container" v-show="!done">
         <video width="500" height="500" autoplay muted class="video__intro">
           <source src="@/assets/video/introduction.mp4" type="video/mp4">
           Your Video Doesnt Support
@@ -13,14 +13,21 @@
 
     <!-- Main App -->
     <div v-show="done">
+      <!-- Logo App -->
       <img src="@/assets/img/logo/LogoIntro.png" alt="logo" class="logo animate__animated animate__fadeInDown">
+
+      <!-- Hamburger App -->
       <hamburger-menu :clicked="clicked"></hamburger-menu>
+
+      <!-- Menu Ap -->
       <menu-navigation :menuOpen="menuOpen"></menu-navigation>
 
+      <!-- Main View -->
       <transition name="menu">
         <router-view v-if="!menuOpen"></router-view>
       </transition>
 
+      <!-- Button -->
       <button-top :scrolled="scrolled"></button-top>
     </div>
     <!-- End of Main App -->

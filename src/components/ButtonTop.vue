@@ -23,8 +23,8 @@ export default {
 @import '@/assets/scss/main.scss';
 .button-top {
   position: fixed;
-  right: 25px;
-  bottom: 90px;
+  left: 25px;
+  bottom: 25px;
   width: 50px;
   height: 50px;
   z-index: 9;

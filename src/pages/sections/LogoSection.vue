@@ -1,25 +1,27 @@
 <template>
   <section class="logo-section">
     <div class="container">
-      <div class="row-title">
-        <h2 class="section-title pt-3">Pengenalan Logo</h2>
-      </div>
-      <div class="row-content flex-container">
-        <div class="filosofi">
-          <div class="filosofi__logo">
-            <i class="fas fa-chevron-left left-arrow" style="z-index:999" @click="prevLogo(current)"></i>
-            <img src="@/assets/img/logo/Ungu.png" class="ungu" v-show="current == 0">
-            <img src="@/assets/img/logo/Hijau.png" class="hijau" v-show="current == 1">
-            <img src="@/assets/img/logo/Biru.png" class="biru" v-show="current == 2">
-            <img src="@/assets/img/logo/Kuning.png" class="kuning" v-show="current == 3">
-            <img src="@/assets/img/logo/Orange.png" class="`orange" v-show="current == 4">
-            <i class="fas fa-chevron-right right-arrow" style="z-index:999" @click="nextLogo(current)"></i>
-          </div>
-          <div class="filosofi__content">
-            <h3 class="filosofi__content-title">{{ title }}</h3>
-            <p class="filosofi__content-color">{{ color }}</p>
-            <p class="filosofi__content-description">{{ description }}</p>
-          </div>
+      <h2 class="section-title" data-aos="fade-left">Pengenalan Logo</h2>
+      <div class="filosofi">
+        <div class="filosofi__logo" data-aos="fade-left" data-aos-delay="100">
+          <i class="fas fa-chevron-left left-arrow" style="z-index:999" @click="prevLogo(current)"></i>
+          <img src="@/assets/img/logo/Ungu.png" class="ungu" v-show="current == 4">
+          <img src="@/assets/img/logo/Hijau.png" class="hijau" v-show="current == 3">
+          <img src="@/assets/img/logo/Biru.png" class="biru" v-show="current == 2">
+          <img src="@/assets/img/logo/Kuning.png" class="kuning" v-show="current == 1">
+          <img src="@/assets/img/logo/Orange.png" class="`orange" v-show="current == 0">
+          <i class="fas fa-chevron-right right-arrow" style="z-index:999" @click="nextLogo(current)"></i>
+        </div>
+        <div class="filosofi__content">
+          <h3 class="filosofi__content-title" 
+            data-aos="fade-right"
+            data-aos-delay="100">{{ title }}</h3>
+          <p class="filosofi__content-color" 
+            data-aos="fade-right"
+            data-aos-delay="150">Filosofi: <br> {{ color }}</p>
+          <p class="filosofi__content-description" 
+            data-aos="fade-right"
+            data-aos-delay="125">Penjelasan: <br> {{ description }}</p>
         </div>
       </div>
     </div>
@@ -93,22 +95,25 @@ export default {
 <style lang="scss">
 @import '@/assets/scss/main.scss';
 .logo-section {
-  margin-top: 75vh; /* Spacing for About Text */
   height: 100vh;
   background: $main-color;
-  
+  padding: 50px 0;
   .filosofi {
-    height: 100%;
-    text-align: center;
+    margin: 50px 0 0;
+    display: flex;
+    align-items: center;
     &__logo {
-      width: 500px; /* Fixed Measurement */
-      height: 60%;
-      margin: 0 auto;
+      flex: 1;
       position: relative;
       i {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.4em;
         position: absolute;
         top: 50%;
-        font-size: 64px;
         color: $main-light;
         opacity: .75;
         transition: .4s ease-out;
@@ -119,32 +124,28 @@ export default {
         &.right-arrow { left: 100%; transform: translate(-100%, -50%) }
       }
       img {
-        height: 100%;
+        max-width: 100%;
         margin-left: 120px; /* Set To Default Image Width */
       }
     }
     &__content {
-      width: 500px;
-      height: 40%;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      flex: 1;
+      padding-left: 50px;
       position: relative;
       z-index: 1;
       &-title {
         font-family: 'Kendal-Type', sans-serif;
-        font-size: 32px;
+        font-size: 2rem;
         font-weight: 500;
         color: $main-light;
       }
       &-color {
-        margin: 12px 0;
+        margin: 16px 0;
         font-style: italic;
         color: darken($main-light, 10%);
       }
       &-description {
+        max-width: 90%;
         color: darken($main-light, 10%);
       }
     }
@@ -153,34 +154,29 @@ export default {
 // Mobile Style
 @media only screen and (max-width: 400px) {
   .logo-section {
-    overflow: hidden; /* Because of margin from the logo images */
-    width: 75%;
-    margin: 50vh auto 0;
+    padding: 50px 0;
     .filosofi {
+      max-width: 90%;
+      margin: 50px auto 0;
+      flex-direction: column;
       &__logo {
-        width: 100%;
-        height: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        i {
-          font-size: 40px;
-        }
+        flex: 1;
+        position: relative;
+        margin-bottom: 25px;
         img {
-          width: 100%;
-          height: auto;
-          margin-left: 115px;
+          max-width: 100%;
+          margin-left: 65px; /* Set To Default Image Width */
         }
       }
       &__content {
-        width: 100%;
-        height: 50%;
+        padding-left: 0;
+        text-align: center;
         &-title {
-          font-size: 24px;
+          font-family: 'Kendal-Type', sans-serif;
+          font-size: 1.6rem;
         }
         &-description {
-          padding: 0 0;
-          line-height: 1.5;
+          max-width: 100%;
         }
       }
     }
@@ -189,74 +185,30 @@ export default {
 // Tablet Style
 @media only screen and (min-width: 401px) and (max-width: 768px) {
   .logo-section {
-    overflow: hidden; /* Because of margin from the logo images */
-    width: 75%;
-    margin: 75vh auto 0;
+    padding: 50px 0;
     .filosofi {
+      flex-direction: column;
       &__logo {
-        width: 100%;
-        height: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        i {
-          font-size: 48px;
-        }
+        flex: 1;
+        position: relative;
+        margin-bottom: 25px;
         img {
-          width: 100%;
-          height: auto;
-          margin-left: 170px;
+          max-width: 100%;
+          margin-left: 80px; /* Set To Default Image Width */
         }
       }
       &__content {
-        width: 100%;
-        height: 50%;
+        padding-left: 0;
+        text-align: center;
         &-title {
-          font-size: 28px;
+          font-family: 'Kendal-Type', sans-serif;
+          font-size: 1.6rem;
         }
         &-description {
-          padding: 0 0;
-          line-height: 1.5;
+          max-width: 100%;
         }
       }
     }
-  }
-}
-// Laptop Style
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .logo-section {
-    overflow: hidden; /* Because of margin from the logo images */
-    width: 75%;
-    margin: 75vh auto 0;
-    .filosofi {
-      &__logo {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        img {
-          width: 100%;
-          object-fit: contain;
-          margin-left: 175px;
-        }
-      }
-      &__content {
-        width: 100%;
-        &-title {
-          font-size: 30px;
-        }
-        &-description {
-          padding: 0 0;
-          line-height: 1.5;
-        }
-      }
-    }
-  }
-}
-// Desktops Style
-@media only screen and (min-width: 1025px) and (max-width: 1200px) {
-  .logo-section {
-    margin: 75vh auto 0;
   }
 }
 </style>

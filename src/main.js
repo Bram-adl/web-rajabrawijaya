@@ -5,6 +5,8 @@ import VueRellax from 'vue-rellax'
 import VueScrollTo from 'vue-scrollto'
 
 import App from './App.vue'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import './registerServiceWorker'
 
 import 'animate.css'
@@ -35,6 +37,9 @@ const router = new VueRouter({
 })
 
 new Vue({
+  created() {
+    AOS.init()
+  },
   render: h => h(App),
   router,
 }).$mount('#app')

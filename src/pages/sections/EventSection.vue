@@ -1,46 +1,60 @@
 <template>
   <div class="event-section">
-    <img v-rellax="{ speed: 3 }" src="@/assets/img/visual-identity.svg" class="img__decoration__1">
-    <div class="container">
-      <div class="row-title">
-        <h2 class="section-title pt-3">Rangkaian Acara</h2>
-      </div>
-      <div class="row-content justify-between">
-        <div class="card" v-for="card in cards" :key="card.id">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="@/assets/img/cards/card1-corner.svg" class="img top-left">
-              <img src="@/assets/img/cards/card1-corner.svg" class="img top-right">
-              <img src="@/assets/img/cards/card1-corner.svg" class="img bottom-left">
-              <img src="@/assets/img/cards/card1-corner.svg" class="img bottom-right">
-              <img src="@/assets/img/cards/card1-mid-bottom.svg" class="img-footer">
+    <img v-rellax="{ speed: 2 }" src="@/assets/img/visual-identity.svg" class="img__decoration__1">
 
-              <div class="card-front-item">
-                <img :src="card.img1" class="card-front-item-img">
-                <h3 class="card-front-item-text">{{ card.title }}</h3>
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-right">Rangkaian Acara</h2>
+      <carousel 
+        :perPage="3"
+        :perPageCustom="[[300, 1], [768, 2], [1024, 3]]"
+        :easing="'ease-in-out'" 
+        :scrollPerPage="true" 
+        :paginationActiveColor="'#5784BA'" 
+        :paginationColor="'#999'">
+        <slide v-for="(card, index) in cards" :key="card.id" style="padding: 50px 0 25px;">
+          <div class="card" data-aos="fade-up" :data-aos-delay="'50' * index" data-aos-duration="1000">
+            <div class="card-inner">
+              <div class="card-front">
+                <img src="@/assets/img/cards/card1-corner.svg" class="img top-left">
+                <img src="@/assets/img/cards/card1-corner.svg" class="img top-right">
+                <img src="@/assets/img/cards/card1-corner.svg" class="img bottom-left">
+                <img src="@/assets/img/cards/card1-corner.svg" class="img bottom-right">
+                <img src="@/assets/img/cards/card1-mid-bottom.svg" class="img-footer">
+
+                <div class="card-front-item">
+                  <img :src="card.img1" class="card-front-item-img">
+                  <h3 class="card-front-item-text">{{ card.title }}</h3>
+                </div>
+              </div>
+              <div class="card-back">
+                <div class="card-back-header">
+                  <img :src="card.img2" class="card-back-header-img">
+                  <h4 class="card-back-header-text">{{ card.title }}</h4>
+                </div>
+                <div class="card-back-text">
+                  <p>{{ card.description }}</p>
+                </div>
+                <img src="@/assets/img/cards/card2-mid-bottom.svg" class="card-back-footer">
               </div>
             </div>
-            <div class="card-back">
-              <div class="card-back-header">
-                <img :src="card.img2" class="card-back-header-img">
-                <h4 class="card-back-header-text">{{ card.title }}</h4>
-              </div>
-              <div class="card-back-text">
-                <p>{{ card.description }}</p>
-              </div>
-              <img src="@/assets/img/cards/card2-mid-bottom.svg" class="card-back-footer">
-            </div>
-          </div>
         </div>
-      </div>
+        </slide>
+      </carousel>
     </div>
-    <img v-rellax="{ speed: 5 }" src="@/assets/img/visual-identity.svg" class="img__decoration__2">
+
+    <img v-rellax="{ speed: 4 }" src="@/assets/img/visual-identity.svg" class="img__decoration__2">
   </div>
 </template>
 
 <script>
+import { Carousel, Slide } from 'vue-carousel';
+
 export default {
   name: 'event-section',
+  components: {
+    Carousel,
+    Slide
+  },
   data: () => {
     return {
       cards: [
@@ -75,29 +89,28 @@ export default {
 <style lang="scss">
 @import '@/assets/scss/main.scss';
 .event-section {
-  height: 100vh;
   background: $main-color;
   position: relative;
+  padding: 50px 0;
   .img__decoration__1,
   .img__decoration__2 {
     position: absolute;
-    top: -100%;
-    left: -50%;
-    width: 100%;
-    height: 100%;
+    top: 0%;
+    left: -10%;
+    width: 300px;
+    height: auto;
     object-fit: contain;
     z-index: 0;
   }
   .img__decoration__2 {
     top: 0;
-    left: unset;
-    right: -50%;
+    left: 90%;
   }
   .card {
     width: 300px;
     height: 400px;
     perspective: 1000px;
-    margin: 25px 0;
+    margin: auto;
     position: relative;
     z-index: 1;
     .card-inner {
@@ -207,115 +220,20 @@ export default {
     }
   }
 }
-// Mobile Styles
 @media only screen and (max-width: 400px) {
-  .event-section {
-    height: auto;  
-    .row-content {
-      height: auto;
-      flex-direction: column;
-      .card {
-        .card-inner {
-          .card-front {
-            .img {
-              &-footer {
-                width: 150px;
-              }
-            }
-            &-item {
-              &-text {
-                font-size: 30px;
-              }
-            }
-          }
-          .card-back {
-            transform: rotateY(180deg);
-            &-header {
-              &-img {
-                width: 75px;
-              }
-              &-text {
-                font-size: 30px;
-              }
-            }
-            &-text {
-              line-height: 1.5;
-              max-height: 175px;
-              overflow: scroll;
-            }
-            &-footer {
-              transform: translate(-50%, -125%);
-              width: 75px;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-// Tablet Styles
-@media only screen and (min-width: 401px) and (max-width: 768px) {
-  .event-section {
+  .img__decoration__1,
+  .img__decoration__2 {
+    position: absolute;
+    top: 0%;
+    left: -15% !important;
+    width: 100px !important;
     height: auto;
-    .row-content {
-      height: auto;
-      flex-direction: column;
-    }
+    object-fit: contain;
+    z-index: 0;
   }
-}
-// Laptop Styles
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .event-section {
-    height: auto;
-    padding-bottom: 50px;
-    .row-content {
-      height: auto;
-      flex-direction: row;
-      .card {
-        width: 200px;
-        height: 300px;
-        .card-inner {
-          .card-front {
-            .img {
-              width: 30px;
-              height: 30px;
-              &-footer {
-                width: 100px;
-              }
-            }
-            &-item {    
-              &-img {
-                width: 100px;
-              }
-              &-text {
-                font-size: 24px;
-              }
-            }
-          }
-          .card-back {
-            &-header {
-              padding: 12px 0;
-              &-img {
-                width: 30px;
-              }
-              &-text {
-                font-size: 24px;
-              }
-            }
-            &-text {
-              font-size: 14px;
-              line-height: 1.5;
-              max-height: 150px;
-              overflow: scroll;
-            }
-            &-footer {
-              transform: translate(-50%, -125%);
-              width: 50px;
-            }
-          }
-        }
-      }
-    }
+  .img__decoration__2 {
+    top: 0;
+    left: 90% !important;
   }
 }
 </style>
