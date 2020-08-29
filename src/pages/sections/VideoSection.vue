@@ -9,7 +9,7 @@
         <button class="btn btn-block"  v-on:click="subscribeToNotifications">Aktifkan Notifikasi RAJA!</button>
       </div>
     </div>
-    <img v-rellax="{ speed: 4 }" src="@/assets/img/hero/gunung.webp" alt="gunung" class="background__image">
+    <img v-rellax="{ speed: 4 }" src="@/assets/img/hero/gunung.png" alt="gunung" class="background__image">
   </div>
 </template>
 

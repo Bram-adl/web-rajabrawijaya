@@ -1,24 +1,29 @@
 <template>
   <div id="app" class="app">
-    <div class="video__container" v-if="!done">
-      <video width="500" height="500" autoplay muted class="video__intro">
-        <source src="@/assets/video/introduction.mp4" type="video/mp4">
-        Your Video Doesnt Support
-      </video>
-    </div>
-    <transition name="showApp">
-      <div v-show="done">
-        <img src="@/assets/img/logo/LogoIntro.webp" alt="logo" class="logo animate__animated animate__fadeInDown">
-        <hamburger-menu :clicked="clicked"></hamburger-menu>
-        <menu-navigation :menuOpen="menuOpen"></menu-navigation>
-
-        <transition name="menu">
-          <router-view v-if="!menuOpen"></router-view>
-        </transition>
-
-        <button-top :scrolled="scrolled"></button-top>
+    <!-- Bumper -->
+    <transition name="menu">
+      <div class="video__container" v-show="!done" style="border: 1px solid white;">
+        <video width="500" height="500" autoplay muted class="video__intro">
+          <source src="@/assets/video/introduction.mp4" type="video/mp4">
+          Your Video Doesnt Support
+        </video>
       </div>
     </transition>
+    <!-- End of Bumper -->
+
+    <!-- Main App -->
+    <div v-show="done">
+      <img src="@/assets/img/logo/LogoIntro.png" alt="logo" class="logo animate__animated animate__fadeInDown">
+      <hamburger-menu :clicked="clicked"></hamburger-menu>
+      <menu-navigation :menuOpen="menuOpen"></menu-navigation>
+
+      <transition name="menu">
+        <router-view v-if="!menuOpen"></router-view>
+      </transition>
+
+      <button-top :scrolled="scrolled"></button-top>
+    </div>
+    <!-- End of Main App -->
   </div>
 </template>
 
@@ -115,13 +120,9 @@ a {
   height: 100vh;
   background: #000;
   position: relative;
-  animation: hideOut 1s ease-out forwards;
-  animation-delay: 6s;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.video__intro {
 }
 // Responsives
 @media only screen and (max-width: 400px) {
